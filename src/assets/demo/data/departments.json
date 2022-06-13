@@ -1,0 +1,7 @@
+{
+    "data": [
+               {"DepartmentID": "1", "Name": "ENCC" , "Code": "123"}, 
+               {"DepartmentID": "2", "Name": "ENCC1" , "Code": "124"}, 
+               {"DepartmentID": "3", "Name": "ENCC2" , "Code": "125"}
+            ]
+}

@@ -1,0 +1,60 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"name": "EVALUAION",
+			"description": "This package is used to evaluate applications and find valid candidates.",
+            "imgUrl": "assets/layout/images/pages/evaluation.jpg",
+            "appUrl": "http://localhost:4200/#/login"
+	    },
+		{
+			"id": "1001",
+			"name": "TRAINING",
+			"description": "This package is used to keep student training data of scholarship candidates.",
+            "imgUrl": "assets/layout/images/pages/training.png",
+            "appUrl": "http://localhost:63944/Login.aspx"
+	    },
+		{
+			"id": "1002",
+			"name": "OFFICE",
+			"description": "This package is used to keep candidate performance, academic & claims information.",
+            "imgUrl": "assets/layout/images/pages/office.jpg",
+            "appUrl": "http://localhost:64757/Login.aspx"
+	    },
+		{
+			"id": "1003",
+			"name": "COMMUNICATION",
+			"description": "This package is used to keep track of Student(s) communication informtion.",
+            "imgUrl": "assets/layout/images/pages/communication.png",
+            "appUrl": "http://localhost:64757/Login.aspx"
+	    },
+		{
+			"id": "1004",
+			"name": "STUDENT ANALYSIS",
+			"description": "This package is used to keep track of Students claim, performance & working details.",
+            "imgUrl": "assets/layout/images/pages/analysis.jpg",
+            "appUrl": "http://localhost:64757/Login.aspx"
+	    },
+        {
+			"id": "1005",
+			"name": "ONLINE APPLICATIONS",
+			"description": "This package is used to apply for Scholarship online. And keep track of all the applications.",
+            "imgUrl": "assets/layout/images/pages/scholarships.jpg",
+            "appUrl": "https://lpfscholarship.com/LPFOnlineApp"
+	    },
+        {
+			"id": "1006",
+			"name": "2MORROW 2GETHER",
+			"description": "This package is used to keep track of girls training, academic records, other improvements programs etc.",
+            "imgUrl": "assets/layout/images/pages/2m2gScholarship.png",
+            "appUrl": "http://localhost:49872/"
+	    },
+        {
+			"id": "1007",
+			"name": "MY GALLARY",
+			"description": "This package is used to keep track of Books, Musics, Souvenir & other collections etc.",
+            "imgUrl": "assets/layout/images/pages/MyCollections.png",
+            "appUrl": "http://localhost:54816/Default.aspx"
+	    }
+	]
+}

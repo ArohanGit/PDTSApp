@@ -1,0 +1,7 @@
+{
+    "production": false,
+    "metaDataPath": "assets/",
+
+    "url": "http://localhost:51661/api/",
+    "docUrl": "http://localhost:51661/"
+  }

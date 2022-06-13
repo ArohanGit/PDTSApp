@@ -1,0 +1,76 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"TemplateName": "Key information + task",
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+            "UpdatedBy": "Updated By Name",
+            "UpdatedByInitials": "AB",
+			"UpdatedOn": "2021-06-15",
+			"Status": "Active",
+			"AssignTask": true,
+			"Upload": true,
+			"LinkItem": true
+		},
+		{
+			"id": "1001",
+			"TemplateName": "Key milestone",
+			"Description": "Key milestone Description",
+            "UpdatedBy": "Updated By Name",
+            "UpdatedByInitials": "CD",
+			"UpdatedOn": "2021-06-15",
+			"Status": "Active",
+			"AssignTask": true,
+			"Upload": false,
+			"LinkItem": false
+        },
+        {
+			"id": "1003",
+			"TemplateName": "Template-3",
+			"Description": "Template 3 Description",
+            "UpdatedBy": "Updated By Name",
+            "UpdatedByInitials": "EF",
+			"UpdatedOn": "2021-06-15",
+			"Status": "Active",
+			"AssignTask": false,
+			"Upload": true,
+			"LinkItem": true
+        },
+        {
+			"id": "1004",
+			"TemplateName": "Template-4",
+			"Description": "Template 4 Description",
+            "UpdatedBy": "Updated By Name",
+            "UpdatedByInitials": "AB",
+			"UpdatedOn": "2021-06-15",
+			"Status": "Active",
+			"AssignTask": true,
+			"Upload": true,
+			"LinkItem": true
+        },
+        {
+			"id": "1005",
+			"TemplateName": "Template-5",
+			"Description": "Template 5 Description",
+            "UpdatedBy": "Updated By Name",
+            "UpdatedByInitials": "AB",
+			"UpdatedOn": "2021-06-15",
+			"Status": "Active",
+			"AssignTask": true,
+			"Upload": true,
+			"LinkItem": true
+        },
+        {
+			"id": "1005",
+			"TemplateName": "Template-6",
+			"Description": "Template 6 Description",
+            "UpdatedBy": "Updated By Name",
+            "UpdatedByInitials": "AB",
+			"UpdatedOn": "2021-06-15",
+			"Status": "Active",
+			"AssignTask": true,
+			"Upload": true,
+			"LinkItem": true
+		}
+	]
+}

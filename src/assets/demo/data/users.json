@@ -1,0 +1,41 @@
+{
+	"data": [
+                {
+                    "EmployeeId": "1",
+                    "Code": "001",
+                    "Name": "Prasad Nadkarni",
+                    "IsLeft": "N",
+                    "EMailAddress": "prasad@arohansystems.com",
+                    "WebUserId": "PGN",
+                    "password": "M",
+                    "IsManHourEmployee": "Y",
+                    "DeptCode": "123",
+                    "DeptName": "ENCC"
+                },
+                {
+                    "EmployeeId": "2",
+                    "Code": "002",
+                    "Name": "Mahendra Shirrpurkar",
+                    "IsLeft": "N",
+                    "EMailAddress": "mahendra@arohansystems.com",
+                    "WebUserId": "MSS",
+                    "password": "M",
+                    "IsManHourEmployee": "Y",
+                    "DeptCode": "124",
+                    "DeptName": "ENCC1"
+                },
+                {
+                    "EmployeeId": "3",
+                    "Code": "003",
+                    "Name": "Prakash Shinde",
+                    "IsLeft": "N",
+                    "EMailAddress": "prakash@arohansystems.com",
+                    "WebUserId": "PRS",
+                    "password": "M",
+                    "IsManHourEmployee": "Y",
+                    "DeptCode": "125",
+                    "DeptName": "ENCC2"
+                }
+    ]
+}
+    

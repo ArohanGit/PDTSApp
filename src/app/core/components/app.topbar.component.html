@@ -1,0 +1,23 @@
+<div class="layout-topbar p-shadow-4" style="background:white">
+    <div class="layout-topbar-right" [ngClass]="{'layout-topbar-mobile-active': appMain.mobileTopbarActive}">
+        <div class="layout-topbar-actions-left ">
+            <img src="assets/layout/images/logo-light.svg" width="120" alt="" />
+            <!-- <h3 class="p-pr-1" style="color: #11387F;" >Asset Transfer Note</h3> -->
+            <div class="p-ml-2" style="font-size:large; color:#003265">
+                <b> Product Delivery Time Service (PDTS)</b>
+            </div>
+            <!-- <small>(Ver. Beta)</small> -->
+            <!-- <p-megaMenu [model]="model" styleClass="layout-megamenu"></p-megaMenu> -->
+        </div>
+        <div class="layout-topbar-actions-right">
+            <ul class="layout-topbar-items">
+                <li class="layout-topbar-item">
+                    <a class="layout-topbar-action rounded-circle" style="color:red;" (click)="appMain.onLogOut($event)" pRipple title="Log Out">
+                        <i class="pi fs-large"
+                            [ngClass]="{'pi-power-off p-button-rounded': !app.isRTL, 'pi-arrow-right': app.isRTL}"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

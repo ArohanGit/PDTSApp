@@ -1,0 +1,6 @@
+[
+    { "SrlNo": 1, "AssetNo": "12345", "AssetDescr": "Item1", "HSNCode": "88888", "Qty": 1, "Value": 8765, "UOM": "NO", "NatureOfProcessing": "", "ReturnDuration": "", "FromWareHouseCode": "21" },
+    { "SrlNo": 2, "AssetNo": "12346", "AssetDescr": "Item2", "HSNCode": "88888", "Qty": 1, "Value": 8765, "UOM": "NO", "NatureOfProcessing": "", "ReturnDuration": "", "FromWareHouseCode": "21" },
+    { "SrlNo": 3, "AssetNo": "12347", "AssetDescr": "Item3", "HSNCode": "88888", "Qty": 1, "Value": 8765, "UOM": "NO", "NatureOfProcessing": "", "ReturnDuration": "", "FromWareHouseCode": "21" }
+]
+  

@@ -1,0 +1,69 @@
+{
+    "data": [
+        {
+        "label": "ACTIVITIES",
+        "items": [
+                [
+                    {
+                    "label": "FAVORITES",
+                    "items": [
+                            { "label": "My Tasks", "icon": "pi pi-fw pi-check-square", "badge": "4", "routerLink": ["/PDTS/tasklist"
+                                ]
+                            },
+                            { "label": "My Projects", "icon": "pi pi-fw pi-id-card", "badge": "2", "routerLink": ["/PDTS/projects"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            ]
+        },
+        {
+        "label": "CONFIGURATION",
+        "items": [
+                [
+                    {
+                    "label": "Project",
+                    "items": [
+                            { "label": "Project List", "icon": "pi pi-fw pi-upload", "routerLink": ["/PDTS/project-list"
+                                ]
+                            },
+                            { "label": "Configure Project template", "icon": "pi pi-fw pi-list", "routerLink": ["/PDTS/projecttemplate"
+                                ]
+                            },
+                            { "label": "Assign team Members", "icon": "pi pi-fw pi-users", "routerLink": ["/PDTS/projectteam"
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                [
+                    {
+                    "label": "TEMPLATES",
+                    "items": [
+                            { "label": "Standard information", "icon": "pi pi-fw pi-star-o", "routerLink": ["/PDTS/template"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                    "label": "USERS",
+                    "items": [
+                            { "label": "User Setup", "icon": "pi pi-fw pi-users", "routerLink": ["/PDTS/user"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "ROLES",
+                        "items": [
+                                { "label": "Role Setup", "icon": "pi pi-fw pi-roles", "routerLink": ["/PDTS/role"
+                                    ]
+                                }
+                            ]
+                        }
+                ]
+            ]
+        }
+    ]
+}

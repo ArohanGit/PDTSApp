@@ -1,0 +1,25 @@
+{
+	"data": [
+		{
+			"id": "1000",
+            "ProjectId": "1000",
+			"SectionId": "1000",
+			"TemplateId": "1000",
+			"TemplateName": "Key information + task"
+        },
+        {
+			"id": "1001",
+            "ProjectId": "1000",
+			"SectionId": "1000",
+			"TemplateId": "1001",
+			"TemplateName": "MileStone"
+        },
+        {
+			"id": "1002",
+            "ProjectId": "1000",
+			"SectionId": "1000",
+			"TemplateId": "1002",
+			"TemplateName": "Template3"
+        }
+    ]
+}

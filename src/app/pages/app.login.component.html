@@ -1,0 +1,54 @@
+<div class="pages-body login-page p-d-flex p-flex-column">
+    <!-- <div class="topbar p-p-3 p-d-flex p-jc-between p-flex-row p-ai-center" style="background:white">
+        <div class="topbar-left p-ml-3 p-d-flex" routerLink="/">
+            <div class="logo p-d-flex p-flex-column p-flex-md-row">
+                <div> <img src="assets/layout/images/logo-light.svg" alt="" /> </div>
+                <div class="p-ml-2 p-mt-1" style="font-size:large; color: #11387F;"><b> Product Delivery Time Service (PDTS)</b></div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="p-as-center p-mt-auto p-mb-auto">
+        <div class="pages-panel card p-d-flex p-flex-column p-pl-50">
+            <div class="pages-header p-px-3 p-py-1">
+                <h2 style="color: #11387F;">PDTS</h2>
+                <!-- <small>(Ver. Beta)</small> -->
+            </div>
+
+            <div style="text-align: center;" class="p-pt-5">
+            <img src="assets/layout/images/logo-light.svg" alt="" style="width: 120px; " />
+        </div>
+            <h4>Welcome</h4>
+
+            <div class="pages-detail p-mb-6 p-px-6">Please enter your credentials to log-in</div>
+
+            <div class="input-panel p-d-flex p-flex-column p-px-3">
+                <div class="p-inputgroup">
+                    <span class="p-inputgroup-addon">
+                        <i class="pi pi-user"></i>
+                    </span>
+                    <span class="p-float-label">
+                        <input type="text" id="UserName" tabindex="1" [(ngModel)]="loginCredentials.UserName"
+                            pInputText>
+                        <label for="UserName">User ID</label>
+                    </span>
+                </div>
+
+                <div class="p-inputgroup p-mt-3 p-mb-6">
+                    <span class="p-inputgroup-addon">
+                        <i class="pi pi-lock"></i>
+                    </span>
+                    <span class="p-float-label">
+                        <input type="password" id="Password" tabindex="2" [(ngModel)]="loginCredentials.Password"
+                            pInputText>
+                        <label for="Password">Password</label>
+                    </span>
+                </div>
+            </div>
+
+            <p-button class="login-button p-mb-6 p-px-3" label="LOGIN" (onClick)="loginClick($event)"></p-button>
+
+        </div>
+    </div>
+</div>

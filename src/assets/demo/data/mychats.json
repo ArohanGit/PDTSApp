@@ -1,0 +1,30 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"ProjectCode": "PRJCODE-1",
+			"ProjectName": "Project Name 1",
+			"SectionCode": "WBSCODE-1",
+			"SectionName": "WBS Code Name",
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!",
+            "image": "assets/demo/images/avatar/xuxuefeng.png",
+            "CreateByInitials": "AB",
+            "CreatedBy": "ABC",           
+			"CreatedOn": "2021-06-15",		
+			"Status": "Unread"
+		},
+		{
+			"id": "1001",
+			"ProjectCode": "PRJCODE-1",
+			"ProjectName": "Project Name 2",
+			"SectionCode": "WBSCODE-2",
+			"SectionName": "WBS Code Name",
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!",
+            "image": "assets/demo/images/avatar/elwinsharvill.png",
+            "CreateByInitials": "XY",
+            "CreatedBy": "XYZ",           
+			"CreatedOn": "2021-06-15",		
+			"Status": "Unread"
+        }
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"ProjectCode": "PRJCODE-1",
+			"ProjectName": "Project Name 1",
+			"image": "assets/demo/images/avatar/xuxuefeng.png",
+            "PublishedOn": "2021-06-15",
+            "ClosedOn": "2021-6-30",
+            "CompletedOn": "2021-12-30",
+            "TeamMemberCount": "10",
+            "ProjectProgress": "25"
+        },
+        {
+			"id": "1001",
+			"ProjectCode": "PRJCODE-2",
+			"ProjectName": "Project Name 2",
+			"image": "assets/demo/images/avatar/elwinsharvill.png",
+            "PublishedOn": "2021-06-15",
+            "ClosedOn": "2021-6-30",
+            "CompletedOn": "2021-12-30",
+            "TeamMemberCount": "10",
+            "ProjectProgress": "50"
+        },
+        {
+			"id": "1002",
+			"ProjectCode": "PRJCODE-3",
+			"ProjectName": "Project Name 3",
+			"image": "assets/demo/images/avatar/elwinsharvill.png",
+            "PublishedOn": "2021-06-15",
+            "ClosedOn": "2021-6-30",
+            "CompletedOn": "2021-12-30",
+            "TeamMemberCount": "70",
+            "ProjectProgress": "10"
+        },
+        {
+			"id": "1003",
+			"ProjectCode": "PRJCODE-4",
+			"ProjectName": "Project Name 4",
+			"image": "assets/demo/images/avatar/elwinsharvill.png",
+            "PublishedOn": "2021-06-15",
+            "ClosedOn": "2021-6-30",
+            "CompletedOn": "2021-12-30",
+            "TeamMemberCount": "10",
+            "ProjectProgress": "100"
+        }
+    ]
+}

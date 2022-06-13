@@ -1,0 +1,23 @@
+[
+    {
+        "CustomerCode": "C1234",
+        "Customername": "Customer1",
+        "Address": "India"
+    },
+    {
+        "CustomerCode": "C1235",
+        "Customername": "Customer2",
+        "Address": "India"
+    },
+    {
+        "CustomerCode": "C1237",
+        "Customername": "Customer3",
+        "Address": "India"
+    },
+    {
+        "CustomerCode": "C1236",
+        "Customername": "Customer4",
+        "Address": "India"
+    }
+
+]

@@ -1,0 +1,32 @@
+{
+	"data": [
+		{
+			"id": "1000",
+            "ProjectID": "1000",
+			"ProductWBSCode": "WBSCode-1000/1",
+			"ProductWBSDescr": "Project WBS Descr - 1000/1",
+			"templates": ""
+        },
+        {
+			"id": "1001",
+            "ProjectID": "1000",
+			"ProductWBSCode": "WBSCode-1000/2",
+			"ProductWBSDescr": "Project WBS Descr - 1000/2",
+			"templates": ""
+        },
+        {
+			"id": "1002",
+            "ProjectID": "1001",
+			"ProductWBSCode": "WBSCode-1001/1",
+			"ProductWBSDescr": "Project WBS Descr - 1001/1",
+			"templates": ""
+        },
+        {
+			"id": "1003",
+            "ProjectID": "1001",
+			"ProductWBSCode": "WBSCode-1001/2",
+			"ProductWBSDescr": "Project WBS Descr - 1001/2",
+			"templates": ""
+        }
+    ]
+}

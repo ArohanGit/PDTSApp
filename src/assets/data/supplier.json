@@ -1,0 +1,23 @@
+[
+    {
+        "SupplierCode": "A1234",
+        "Suppliername": "ABC",
+        "Address": "India"
+    },
+    {
+        "SupplierCode": "A1235",
+        "Suppliername": "ABC1",
+        "Address": "India"
+    },
+    {
+        "SupplierCode": "A1237",
+        "Suppliername": "ABC3",
+        "Address": "India"
+    },
+    {
+        "SupplierCode": "A1236",
+        "Suppliername": "ABC4",
+        "Address": "India"
+    }
+
+]

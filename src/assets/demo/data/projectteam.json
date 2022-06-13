@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "ProductWBSCode": "ALL",
+            "ProductWBSDescription": "",
+            "Department": "Department 1",
+            "EmpName": "",
+            "Access": "Read-Only",
+            "Importance": "Default"
+        },
+        {
+            "ProductWBSCode": "ALL",
+            "ProductWBSDescription": "",
+            "Department": "Department 3",
+            "EmpName": "",
+            "Access": "Read-Write",
+            "Importance": "Default"
+        },
+        {
+            "ProductWBSCode": "WBS Code1",
+            "ProductWBSDescription": "Product WBS DESCRIPTION",
+            "Department": "Department 3",
+            "EmpName": "Emp Code 8",
+            "Access": "Read-Only",
+            "Importance": "Override"
+        }
+    ]
+}

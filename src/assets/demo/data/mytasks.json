@@ -1,0 +1,88 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"ProjectCode": "PRJCODE-1",
+			"ProjectName": "Project Name 1",
+			"SectionCode": "WBSCODE-1",
+			"SectionName": "WBS Code Name",
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!",
+            "AssignedBy": "Assigned By Name",
+            "AssignedByInitials": "AB",
+			"image": "bamboo-watch.jpg",
+			"AssignedOn": "2021-06-15",
+			"DueOn": "2021-06-20",
+			"Status": "ToDo"
+		},
+		{
+			"id": "1001",
+			"ProjectCode": "PRJCODE-2",
+			"ProjectName": "Project Name 2",
+			"SectionCode": "WBSCODE-2",
+			"SectionName": "WBS Code Name 2",
+            "Description": "Task to do description",
+            "AssignedBy": "Assigned By Name",
+            "AssignedByInitials": "AB",
+			"image": "bamboo-watch.jpg",
+			"AssignedOn": "2021-06-15",
+			"DueOn": "2021-06-20",
+			"Status": "ToDo"
+        },
+        {
+			"id": "1003",
+			"ProjectCode": "PRJCODE-3",
+			"ProjectName": "Project Name 1",
+			"SectionCode": "WBSCODE-1",
+			"SectionName": "WBS Code Name 3",
+            "Description": "Task to do description",
+            "AssignedBy": "Assigned By Name",
+            "AssignedByInitials": "AB",
+			"image": "bamboo-watch.jpg",
+			"AssignedOn": "2021-06-15",
+			"DueOn": "2021-06-20",
+			"Status": "ToDo"
+        },
+        {
+			"id": "1004",
+			"ProjectCode": "PRJCODE-4",
+			"ProjectName": "Project Name 2",
+			"SectionCode": "WBSCODE-2",
+			"SectionName": "WBS Code Name 4",
+            "Description": "Task to do description",
+            "AssignedBy": "Assigned By Name",
+            "AssignedByInitials": "AB",
+			"image": "bamboo-watch.jpg",
+			"AssignedOn": "2021-06-15",
+			"DueOn": "2021-06-20",
+			"Status": "ToDo"
+        },
+        {
+			"id": "1005",
+			"ProjectCode": "PRJCODE-5",
+			"ProjectName": "Project Name 2",
+			"SectionCode": "WBSCODE-2",
+			"SectionName": "WBS Code Name 5",
+            "Description": "Task to do description",
+            "AssignedBy": "Assigned By Name",
+            "AssignedByInitials": "AB",
+			"image": "bamboo-watch.jpg",
+			"AssignedOn": "2021-06-15",
+			"DueOn": "2021-06-20",
+			"Status": "ToDo"
+        },
+        {
+			"id": "1005",
+			"ProjectCode": "PRJCODE-6",
+			"ProjectName": "Project Name 1",
+			"SectionCode": "WBSCODE-1",
+			"SectionName": "WBS Code Name 6",
+            "Description": "Task to do description",
+            "AssignedBy": "Assigned By Name",
+            "AssignedByInitials": "AB",
+			"image": "bamboo-watch.jpg",
+			"AssignedOn": "2021-06-15",
+			"DueOn": "2021-06-20",
+			"Status": "ToDo"
+		}
+	]
+}
