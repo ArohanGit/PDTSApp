@@ -1,0 +1,64 @@
+<p-panel>
+    <!-- <ng-template pTemplate="header">
+        <div class="p-md-12">
+            <div class="p-d-flex p-jc-end">
+                <div class="p-mr-2">
+                    <button pButton pRipple label="Save" icon="pi pi-check" styleClass="p-button-sm ml-5"
+                        (click)="onSaveClick()">
+                    </button>
+                </div>
+                <div>
+                    <button pButton pRipple label="Cancel" icon="pi pi-times" styleClass="p-button-sm ml-5"
+                        (click)="onCancelClick()">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-template> -->
+
+    <div class="p-grid p-col-12" *ngIf="formData">
+        <div class="p-formgrid p-col-12">
+            <div class="p-field ">
+                <label for="Module">Module</label>
+                <input id="Module" type="text" pInputText [(ngModel)]="this.formData.Module" disabled="true">
+            </div>
+            <div class="p-field ">
+                <label for="ModuleVariant">Module Variant</label>
+                <input id="ModuleVariant" type="text" pInputText [(ngModel)]="this.formData.ModuleVariant"
+                    disabled="true">
+            </div>
+            <div class="p-field ">
+                <label for="ModuleVariantDescription">Module Variant Description</label>
+                <input id="ModuleVariantDescription" type="text" pInputText [(ngModel)]="this.formData.ModuleVariantDescription"
+                    disabled="true">
+            </div>
+            <div class="p-field ">
+                <label for="PartNumber">Part Number</label>
+                <input id="PartNumber" type="text" pInputText [(ngModel)]="this.formData.PartNumber"
+                    disabled="true">
+            </div>
+            <div class="p-field ">
+                <label for="LeadTime">Lead Time</label>
+                <input id="LeadTime" type="text" pInputText [(ngModel)]="this.formData.LeadTime"
+                   >
+            </div>
+        </div>
+
+    </div>
+    <ng-template pTemplate="footer">
+        <div class="p-md-12">
+            <div class="p-d-flex p-jc-end">
+                <div class="p-mr-2">
+                    <button pButton pRipple label="Save" icon="pi pi-check" styleClass="p-button-sm ml-5"
+                        (click)="onSaveClick()">
+                    </button>
+                </div>
+                <div>
+                    <button pButton pRipple label="Cancel" icon="pi pi-times" styleClass="p-button-sm ml-5"
+                        (click)="onCancelClick()">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-panel>

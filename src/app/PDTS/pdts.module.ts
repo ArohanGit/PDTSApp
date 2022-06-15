@@ -8,15 +8,26 @@ import { HttpBasicAuthInterceptor } from '../interceptors/http-basic-auth.interc
 import { PdfViewerModule, LinkAnnotationService, BookmarkViewService, MagnificationService, ThumbnailViewService,
     ToolbarService, NavigationService, TextSearchService, TextSelectionService, PrintService } from '@syncfusion/ej2-angular-pdfviewer';
 import { PDTSRoutingModule } from './pdts-routing.module';
-import { FactoryListComponent } from './features/factory/factory-list.component';
-import { FactoryPageComponent } from './features/factory/factory-page.component';
+import { FactoryScopesListComponent } from './features/factory-scopes/factory-scopes-list.component';
+import { FactoryScopesPageComponent } from './features/factory-scopes/factory-scopes-page.component';
+import { FactoryScopesService } from './services/factoryscopes.service';
+import { FactoryScopesFormComponent } from './features/factory-scopes/factory-scopes-form.component';
 import { FactoryService } from './services/factory.service';
+import { ProductService } from './services/product.service';
+import { ProductDetailService } from './services/productdetail.service';
+import { ProductDetailFormComponent } from './features/product-detail/product-detail-form.component';
+import { ProductDetailListComponent } from './features/product-detail/product-detail-list.component';
+import { ProductDetailPageComponent } from './features/product-detail/product-detail-page.component';
 
 @NgModule({
     declarations: [
         // DashboardComponent,
-        FactoryListComponent,
-        FactoryPageComponent,
+        FactoryScopesListComponent,
+        FactoryScopesPageComponent,
+        FactoryScopesFormComponent,
+        ProductDetailFormComponent,
+        ProductDetailListComponent,
+        ProductDetailPageComponent,
     ],
     imports: [
         CommonModule,
@@ -37,7 +48,10 @@ import { FactoryService } from './services/factory.service';
         TextSearchService, TextSelectionService, PrintService,
 
         AppAuthGuardService,
+        FactoryScopesService,
         FactoryService,
+        ProductService,
+        ProductDetailService,
     ],
     exports: [
         

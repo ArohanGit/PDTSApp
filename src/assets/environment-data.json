@@ -2,6 +2,6 @@
     "production": false,
     "metaDataPath": "assets/",
 
-    "url": "http://localhost:51661/api/",
-    "docUrl": "http://localhost:51661/"
+    "url": "http://localhost:51662/api/",
+    "docUrl": "http://localhost:51662/"
   }

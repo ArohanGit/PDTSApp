@@ -8,7 +8,21 @@
             ],
             "items": [
                 {
-                    "label": "Factory",
+                    "label": "Product Architecture",
+                    "icon": "pi pi-fw pi-book",
+                    "routerLink": [
+                        "/PDTS/product-detail-page"
+                    ]
+                },
+                {
+                    "label": "Factory Scopes",
+                    "icon": "pi pi-fw pi-book",
+                    "routerLink": [
+                        "/PDTS/factory-scopes-page"
+                    ]
+                },
+                {
+                    "label": "Market Leadtime Scopes",
                     "icon": "pi pi-fw pi-book",
                     "routerLink": [
                         "/PDTS/factory-page"

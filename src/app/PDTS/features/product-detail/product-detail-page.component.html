@@ -1,0 +1,9 @@
+<p-panel>
+    <product-detail-list [list]="productdetailFilterList" (onEdit)="onEdit($event)" (onChange)="onChange($event)"></product-detail-list>
+    <p-dialog [(visible)]="ProductDetailDialog" [style]="{width: '650px'}" header="Product Architecture" [modal]="true"
+    styleClass="p-fluid">
+    <product-detail-form [data]="productdetailFormData" (onSave)="onSave($event)"
+        (onCancel)="onHide($event)" >
+    </product-detail-form>
+</p-dialog>
+</p-panel>

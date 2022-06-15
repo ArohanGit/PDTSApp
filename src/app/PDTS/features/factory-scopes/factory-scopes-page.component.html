@@ -1,0 +1,9 @@
+<p-panel>
+    <factory-scopes-list [list]="factoryFilterList" (onEdit)="onEdit($event)" (onChange)="onChange($event)"></factory-scopes-list>
+    <p-dialog [(visible)]="FactoryScopeDialog" [style]="{width: '650px'}" header="Factory Scope" [modal]="true"
+    styleClass="p-fluid">
+    <factory-scopes-form [data]="factoryscopeFormData" (onSave)="onSave($event)"
+        (onCancel)="onHide($event)">
+    </factory-scopes-form>
+</p-dialog>
+</p-panel>

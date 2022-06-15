@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AppEnvironmentConfigService } from 'src/app/core/services/app.environment-config.service';
-import { Factory } from '../domain/factory';
+import { FactoryScope } from '../domain/factory-scope';
 
 
 @Injectable()
-export class FactoryService {
+export class FactoryScopesService {
     api: any = {};
 
     constructor(
@@ -15,7 +15,7 @@ export class FactoryService {
     }
 
     getDTO() {
-        return this.http.get<any>(this.api.url + 'Factory/DTO')
+        return this.http.get<any>(this.api.url + 'FactoryScope/DTO')
             .toPromise()
             .then(res => res as any)
             .then(data => data);
@@ -23,14 +23,14 @@ export class FactoryService {
 
     get() {
         debugger;
-        return this.http.get<any>(this.api.url + 'Factory')
+        return this.http.get<any>(this.api.url + 'FactoryScope')
             .toPromise()
             .then(res => res.Items as any)
             .then(data => data);
     }
 
-    save(oFactory: Factory) {
-        return this.http.post<any>(this.api.url + 'Factory', oFactory)
+    save(oFactoryScope: FactoryScope) {
+        return this.http.post<any>(this.api.url + 'FactoryScope', oFactoryScope)
             .toPromise()
             .then(res => res as any)
             .then(data => data);
