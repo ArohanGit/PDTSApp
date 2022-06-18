@@ -1,11 +1,10 @@
-export interface MarketLeadtimeScope {
-    MarketLeadtimeScopeID: number;  
-    FactoryID: number;
+export interface MarketLeadtime {
+    MarketLeadtimeID: number;  
     Module: string;
     ModuleVariant: string;
     ModuleVariantDescription: string;
     PartNumber: string;
-    LeadtimeDeviation: number;
+    LeadTimeVariation: number;
     FactoryScopeID: number;  
     ProductDetailID: number;
 }

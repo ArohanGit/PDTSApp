@@ -1,0 +1,10 @@
+<p-panel>
+    <market-leadtime-list [list]="marketleadtimeList" (onEdit)="onEdit($event)" >
+    </market-leadtime-list>
+    <p-dialog [(visible)]="MarketLeadtimeDialog" [style]="{width: '650px'}" header="Market LeadTime"
+        [modal]="true" styleClass="p-fluid">
+        <market-leadtime-form [data]="marketleadtimeFormData" (onSave)="onSave($event)"
+            (onCancel)="onHide($event)">
+        </market-leadtime-form>
+    </p-dialog>
+</p-panel>

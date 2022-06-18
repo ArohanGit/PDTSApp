@@ -25,7 +25,7 @@
                     "label": "Market Leadtime Scopes",
                     "icon": "pi pi-fw pi-book",
                     "routerLink": [
-                        "/PDTS/factory-page"
+                        "/PDTS/market-leadtime-page"
                     ]
                 }
             ]

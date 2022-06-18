@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Factory } from '../domain/factory';
 import { FactoryScope } from '../domain/factory-scope';
+import { MarketLeadtime } from '../domain/market-leadtime';
 import { ProductDetail } from '../domain/product-detail';
+import { MarketLeadtimeExt } from '../features/market-leadtime/market-leadtime-ext';
 
 
 @Injectable({
@@ -29,6 +31,12 @@ export class SelectionService {
     public selectedProductDetail$ = this.ProductDetailSelected.asObservable();
     public set selectedProductDetail(value: ProductDetail) {
         this.ProductDetailSelected.next(value);
+    }
+
+    private MarketLeadTimeSelected: BehaviorSubject<MarketLeadtimeExt> = new BehaviorSubject<any>(null);
+    public selectedMarketLeadTime$ = this.MarketLeadTimeSelected.asObservable();
+    public set selectedMarketLeadTime(value: MarketLeadtimeExt) {
+        this.MarketLeadTimeSelected.next(value);
     }
 
    

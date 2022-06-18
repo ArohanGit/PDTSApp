@@ -18,6 +18,10 @@ import { ProductDetailService } from './services/productdetail.service';
 import { ProductDetailFormComponent } from './features/product-detail/product-detail-form.component';
 import { ProductDetailListComponent } from './features/product-detail/product-detail-list.component';
 import { ProductDetailPageComponent } from './features/product-detail/product-detail-page.component';
+import { MarketLeadtimeFormComponent } from './features/market-leadtime/market-leadtime-form.component';
+import { MarketLeadtimeListComponent } from './features/market-leadtime/market-leadtime-list.component';
+import { MarketLeadtimePageComponent } from './features/market-leadtime/market-leadtime-page.component';
+import { MarketLeadtimeService } from './services/marketleadtime.service';
 
 @NgModule({
     declarations: [
@@ -28,6 +32,9 @@ import { ProductDetailPageComponent } from './features/product-detail/product-de
         ProductDetailFormComponent,
         ProductDetailListComponent,
         ProductDetailPageComponent,
+        MarketLeadtimeFormComponent,
+        MarketLeadtimeListComponent,
+        MarketLeadtimePageComponent
     ],
     imports: [
         CommonModule,
@@ -52,6 +59,7 @@ import { ProductDetailPageComponent } from './features/product-detail/product-de
         FactoryService,
         ProductService,
         ProductDetailService,
+        MarketLeadtimeService
     ],
     exports: [
         
