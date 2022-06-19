@@ -25,7 +25,7 @@ export class MarketLeadtimePageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.marketleadtimeService.getmarketleadtime(1,1).then(l => {
+        this.marketleadtimeService.getmarketleadtime('NULL', 'NULL').then(l => {
             this.marketleadtimeList = l;
         });
 
@@ -42,7 +42,7 @@ export class MarketLeadtimePageComponent implements OnInit {
 
     onSave($event) {
         this.marketleadtimeService.save($event).then(u => {
-            
+
             const i = this.marketleadtimeList.findIndex(p => p.MarketLeadtimeID === u.MarketLeadtimeID);
             if (i >= 0) {
                 this.marketleadtimeList[i] = { ...u };
@@ -55,12 +55,20 @@ export class MarketLeadtimePageComponent implements OnInit {
         this.MarketLeadtimeDialog = false;
     }
 
-    onChange($event){
-        // debugger;
-        // const l  = [...this.marketleadtimeList.filter(d => d.MarketLeadtimeID === $event.value)];
-        // this.marketleadtimeList = [...l];
-        
-        }
+   
+    onChangeFactory($event) {
+        debugger;
+        const l = [...this.marketleadtimeList.filter(d => d.FactoryID === $event.value)];
+        this.marketleadtimeFilterList = [...l];
+
+    }
+
+    onChangeProduct($event) {
+        debugger;
+        const l = [...this.marketleadtimeFilterList.filter(d => d.ProductID === $event.value)];
+        this.marketleadtimeFilterList = [...l];
+
+    }
 
 
 }

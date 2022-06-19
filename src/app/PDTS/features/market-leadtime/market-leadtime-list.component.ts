@@ -19,7 +19,9 @@ import { MarketLeadtimeExt } from './market-leadtime-ext';
 export class MarketLeadtimeListComponent implements OnInit {
     @Output() onAdd = new EventEmitter<MarketLeadtimeExt>();
     @Output() onEdit = new EventEmitter<MarketLeadtimeExt>();
-    @Output() onChange = new EventEmitter<any>();
+    @Output() onComboSelected = new EventEmitter<MarketLeadtimeExt>();
+    @Output() onChangeFactory = new EventEmitter<any>();
+    @Output() onChangeProduct = new EventEmitter<any>();
 
    
     _list: MarketLeadtimeExt[] = [];
@@ -77,11 +79,16 @@ export class MarketLeadtimeListComponent implements OnInit {
          this.selectionService.selectedMarketLeadTime = marketleadtime;
          this.onEdit.emit(marketleadtime);
     }
-
-    onSelect(e) {
-        debugger;
+  
+    onFactorySelect(e) {
         if (!e) return;
-        this.onChange.emit(e);
+        this.onChangeFactory.emit(e);
+        
+    }
+
+    onProjectSelect(e) {
+        if (!e) return;
+        this.onChangeProduct.emit(e);
         
     }
 

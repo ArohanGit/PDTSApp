@@ -11,12 +11,18 @@
                 <label for="Product" class="p-mr-4">Select Product</label>
                 <p-dropdown [options]="productList" [(ngModel)]="ProductID"  placeholder="Select Product"
                     optionLabel="ProductName" optionValue="ProductID" (onChange)="onProductSelect($event)">
+                    <ng-template let-item pTemplate="item">
+                        {{item.ProductName}}  ( {{item.ValidFrom | date: 'dd/MM/yyyy'}} )
+                    </ng-template>
+                    <ng-template let-item pTemplate="selectedItem">
+                        {{item.ProductName}}  ( {{item.ValidFrom | date: 'dd/MM/yyyy'}} )
+                    </ng-template>
                 </p-dropdown>
 
             </div>
-            <div class="p-mt-4 p-ml-auto">
+            <!-- <div class="p-mt-4 p-ml-auto">
                 <lable for="Product"  style="font-size: medium; font-weight: bold; color: blue;">Valid From 15/06/2022</lable>
-            </div>
+            </div> -->
             <span class="p-input-icon-left p-ml-auto">
                  <i class="pi pi-search"></i>
                 <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
@@ -31,7 +37,7 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:75px">Edit</th>
-            <th>Module</th>
+            <th style="width:300px">Module</th>
             <th>Module Variant </th>
             <th style="width:400px">Module Variant Description </th>
             <th>Part ID</th>
@@ -44,7 +50,7 @@
                 <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                     (click)="onEditClick(productdetail)" title="Edit"></button>
             </td>
-            <td>{{productdetail.Module}}</td>
+            <td style="width:300px">{{productdetail.Module}}</td>
             <td>{{productdetail.ModuleVariant}}</td>
             <td style="width:400px"> {{productdetail.ModuleVariantDescription}}</td>
             <td>{{productdetail.PartNumber}}</td>

@@ -11,12 +11,18 @@
                 <label for="Factory" class="p-mr-4">Select Factory</label>
                 <p-dropdown [options]="factoryList" [(ngModel)]="FactoryID" placeholder="Select Factory"
                     optionLabel="FactoryName" optionValue="FactoryID" (onChange)="onFactorySelect($event)">
+                    <ng-template let-item pTemplate="item">
+                        {{item.FactoryName}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
+                    </ng-template>
+                    <ng-template let-item pTemplate="selectedItem">
+                        {{item.FactoryName}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
+                    </ng-template>
                 </p-dropdown>
 
             </div>
-            <div class="p-mt-4 p-ml-auto">
+            <!-- <div class="p-mt-4 p-ml-auto">
                 <lable for="Product"  style="font-size: medium; font-weight: bold; color: blue;">Valid From 15/06/2022</lable>
-            </div>
+            </div> -->
             <span class="p-input-icon-left p-ml-auto">
                 <i class="pi pi-search"></i>
                 <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
@@ -31,9 +37,9 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:75px">Edit</th>
-            <th style="width:400px">Module</th>
+            <th style="width:200px">Module</th>
             <th>Module Variant </th>
-            <th>Module Variant Description </th>
+            <th style="width:500px">Module Variant Description </th>
             <th>Part ID</th>
             <th>Lead Time</th>
         </tr>
@@ -44,9 +50,9 @@
                 <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                     (click)="onEditClick(factoryscopes)" title="Edit"></button>
             </td>
-            <td style="width:400px">{{factoryscopes.Module}}</td>
+            <td style="width:200px">{{factoryscopes.Module}}</td>
             <td>{{factoryscopes.ModuleVariant}}</td>
-            <td>{{factoryscopes.ModuleVariantDescription}}</td>
+            <td style="width:500px">{{factoryscopes.ModuleVariantDescription}}</td>
             <td>{{factoryscopes.PartNumber}}</td>
             <td>{{factoryscopes.LeadTime}}</td>
         </tr>

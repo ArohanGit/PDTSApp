@@ -1,5 +1,5 @@
 <p-panel>
-    <market-leadtime-list [list]="marketleadtimeList" (onEdit)="onEdit($event)" >
+    <market-leadtime-list [list]="marketleadtimeFilterList" (onEdit)="onEdit($event)" (onChangeFactory)="onChangeFactory($event)" (onChangeProduct)="onChangeProduct($event)">
     </market-leadtime-list>
     <p-dialog [(visible)]="MarketLeadtimeDialog" [style]="{width: '650px'}" header="Market LeadTime"
         [modal]="true" styleClass="p-fluid">
