@@ -1,4 +1,5 @@
 <p-table #dt [value]="list" [scrollable]="true" [globalFilterFields]="['FactoryID'
+,'Scope'
 ,'Module'
 ,'ModuleVariant'
 ,'ModuleVariantDescription'
@@ -37,6 +38,7 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width:75px">Edit</th>
+            <th>Scope</th>
             <th style="width:200px">Module</th>
             <th>Module Variant </th>
             <th style="width:500px">Module Variant Description </th>
@@ -50,6 +52,7 @@
                 <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                     (click)="onEditClick(factoryscopes)" title="Edit"></button>
             </td>
+            <td>{{factoryscopes.Scope}}</td>
             <td style="width:200px">{{factoryscopes.Module}}</td>
             <td>{{factoryscopes.ModuleVariant}}</td>
             <td style="width:500px">{{factoryscopes.ModuleVariantDescription}}</td>

@@ -29,13 +29,23 @@ export class MarketLeadtimeService {
             .then(data => data);
     }
 
-    getmarketleadtime(FactoryID, ProductID) {
+    getmarketleadtime() {
         debugger;
-        return this.http.get<any>(this.api.url + 'MarketLeadtime/GetMarketLeadtime/' + (typeof (FactoryID) === 'number' ? FactoryID.toString() : FactoryID) + '/' + (typeof (ProductID) === 'number' ? ProductID.toString() : ProductID))
+        return this.http.get<any>(this.api.url + 'MarketLeadtime/GetMarketLeadtime' )
             .toPromise()
             .then(res => res.Items as any)
             .then(data => data);
     }
+
+    getleadtimescope() {
+        debugger;
+        return this.http.get<any>(this.api.url + 'MarketLeadtime/GetLeadtimeScope' )
+            .toPromise()
+            .then(res => res.Items as any)
+            .then(data => data);
+    }
+
+
     
 
     save(oMarketleadtime: MarketLeadtime) {

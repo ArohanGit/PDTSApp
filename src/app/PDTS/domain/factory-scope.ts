@@ -6,4 +6,5 @@ export interface FactoryScope {
     ModuleVariantDescription: string;
     PartNumber: string;
     Leadtime: number;
+    Scope: string;
 }

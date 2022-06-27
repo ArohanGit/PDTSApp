@@ -6,4 +6,5 @@ export interface MarketLeadtimeExt extends MarketLeadtime {
     Productleadtime: number;
     FactoryID: number;
     ProductID: number; 
+    Scope: string;
 }

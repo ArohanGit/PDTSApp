@@ -29,6 +29,14 @@ export class FactoryScopesService {
             .then(data => data);
     }
 
+    getScope() {
+        debugger;
+        return this.http.get<any>(this.api.url + 'FactoryScope/GetScope')
+            .toPromise()
+            .then(res => res.Items as any)
+            .then(data => data);
+    }
+
     save(oFactoryScope: FactoryScope) {
         return this.http.post<any>(this.api.url + 'FactoryScope', oFactoryScope)
             .toPromise()

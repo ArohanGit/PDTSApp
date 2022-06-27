@@ -22,6 +22,8 @@ import { MarketLeadtimeFormComponent } from './features/market-leadtime/market-l
 import { MarketLeadtimeListComponent } from './features/market-leadtime/market-leadtime-list.component';
 import { MarketLeadtimePageComponent } from './features/market-leadtime/market-leadtime-page.component';
 import { MarketLeadtimeService } from './services/marketleadtime.service';
+import { LeadtimeScopesListComponent } from './features/leadtime-scopes/leadtime-scopes-list.component';
+import { LeadtimeScopesPageComponent } from './features/leadtime-scopes/leadtime-scopes-page.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +36,9 @@ import { MarketLeadtimeService } from './services/marketleadtime.service';
         ProductDetailPageComponent,
         MarketLeadtimeFormComponent,
         MarketLeadtimeListComponent,
-        MarketLeadtimePageComponent
+        MarketLeadtimePageComponent,
+        LeadtimeScopesListComponent,
+        LeadtimeScopesPageComponent
     ],
     imports: [
         CommonModule,

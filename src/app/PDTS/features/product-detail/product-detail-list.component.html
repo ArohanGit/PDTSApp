@@ -8,8 +8,8 @@
     <ng-template pTemplate="caption">
         <div class="p-d-flex">
             <div class="p-mt-2">
-                <label for="Product" class="p-mr-4">Select Product</label>
-                <p-dropdown [options]="productList" [(ngModel)]="ProductID"  placeholder="Select Product"
+                <label for="Product" class="p-mr-4">Select scope</label>
+                <p-dropdown [options]="productList" [(ngModel)]="ProductID"  placeholder="Select scope"
                     optionLabel="ProductName" optionValue="ProductID" (onChange)="onProductSelect($event)">
                     <ng-template let-item pTemplate="item">
                         {{item.ProductName}}  ( {{item.ValidFrom | date: 'dd/MM/yyyy'}} )
@@ -18,7 +18,6 @@
                         {{item.ProductName}}  ( {{item.ValidFrom | date: 'dd/MM/yyyy'}} )
                     </ng-template>
                 </p-dropdown>
-
             </div>
             <!-- <div class="p-mt-4 p-ml-auto">
                 <lable for="Product"  style="font-size: medium; font-weight: bold; color: blue;">Valid From 15/06/2022</lable>
@@ -36,25 +35,25 @@
     </ng-template>
     <ng-template pTemplate="header">
         <tr>
-            <th style="width:75px">Edit</th>
+            <!-- <th style="width:75px">Edit</th> -->
             <th style="width:300px">Module</th>
             <th>Module Variant </th>
             <th style="width:400px">Module Variant Description </th>
             <th>Part ID</th>
-            <th>Lead Time</th>
+            <!-- <th>Lead Time</th> -->
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-productdetail>
         <tr>
-            <td class="p-text-center" style="width:75px">
+            <!-- <td class="p-text-center" style="width:75px">
                 <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                     (click)="onEditClick(productdetail)" title="Edit"></button>
-            </td>
+            </td> -->
             <td style="width:300px">{{productdetail.Module}}</td>
             <td>{{productdetail.ModuleVariant}}</td>
             <td style="width:400px"> {{productdetail.ModuleVariantDescription}}</td>
             <td>{{productdetail.PartNumber}}</td>
-            <td>{{productdetail.LeadTime}}</td>
+            <!-- <td>{{productdetail.LeadTime}}</td> -->
         </tr>
     </ng-template>
 </p-table>

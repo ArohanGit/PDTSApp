@@ -10,6 +10,7 @@ import { Product } from 'src/assets/demo/applicationservice';
 import { ProductService } from '../../services/product.service';
 import { MarketLeadtimeService } from '../../services/marketleadtime.service';
 import { MarketLeadtimeExt } from './market-leadtime-ext';
+import { FactoryScopesService } from '../../services/factoryscopes.service';
 
 @Component({
     selector: 'market-leadtime-list',
@@ -20,7 +21,7 @@ export class MarketLeadtimeListComponent implements OnInit {
     @Output() onAdd = new EventEmitter<MarketLeadtimeExt>();
     @Output() onEdit = new EventEmitter<MarketLeadtimeExt>();
     @Output() onComboSelected = new EventEmitter<MarketLeadtimeExt>();
-    @Output() onChangeFactory = new EventEmitter<any>();
+    @Output() onChangeFactoryScope = new EventEmitter<any>();
     @Output() onChangeProduct = new EventEmitter<any>();
 
    
@@ -36,13 +37,13 @@ export class MarketLeadtimeListComponent implements OnInit {
     private marketleadtimeDTO = {} as MarketLeadtimeExt;
 
     // Masters wrt foreign keys.
-    factoryList: Factory[];
+    factoryScopeList: any[];
     productList: Product[];
     
 
     constructor(
         private marketleadtimeService: MarketLeadtimeService,
-        private factoryService: FactoryService,
+        private factoryScopesService: FactoryScopesService,
         private productService: ProductService,
         private selectionService: SelectionService,
         private readonly destroy$: DestroyService,
@@ -51,15 +52,15 @@ export class MarketLeadtimeListComponent implements OnInit {
     ngOnInit() {
         combineLatest([
             this.marketleadtimeService.getDTO(),
-            this.factoryService.get(),
+            this.factoryScopesService.getScope(),
             this.productService.get(),
             
         ])
             .pipe(takeUntil(this.destroy$))
             .subscribe(
-                ([marketleadtimeDTO, factoryList, productList]) => {
+                ([marketleadtimeDTO, factoryScopeList, productList]) => {
                     this.marketleadtimeDTO = {...this.marketleadtimeDTO, ...marketleadtimeDTO};
-                    this.factoryList = [...factoryList];
+                    this.factoryScopeList = [...factoryScopeList];
                     this.productList = [...productList];
                     this.joinMasters();
                 }
@@ -80,9 +81,9 @@ export class MarketLeadtimeListComponent implements OnInit {
          this.onEdit.emit(marketleadtime);
     }
   
-    onFactorySelect(e) {
+    onFactoryScopeSelect(e) {
         if (!e) return;
-        this.onChangeFactory.emit(e);
+        this.onChangeFactoryScope.emit(e);
         
     }
 

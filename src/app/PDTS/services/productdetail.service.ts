@@ -22,12 +22,12 @@ export class ProductDetailService {
     }
 
     get() {
-        debugger;
         return this.http.get<any>(this.api.url + 'ProductDetail')
             .toPromise()
             .then(res => res.Items as any)
             .then(data => data);
     }
+
 
     save(oProductDetail: ProductDetail) {
         return this.http.post<any>(this.api.url + 'ProductDetail', oProductDetail)

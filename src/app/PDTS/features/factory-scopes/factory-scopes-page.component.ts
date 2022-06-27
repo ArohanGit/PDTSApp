@@ -41,14 +41,14 @@ export class FactoryScopesPageComponent implements OnInit {
     onSave($event) {
         this.factoryscopesService.save($event).then(u => {
             
-            const i = this.factoryList.findIndex(p => p.FactoryScopeID === u.FactoryScopeID);
+            const i = this.factoryFilterList.findIndex(p => p.FactoryScopeID === u.FactoryScopeID);
             if (i >= 0) {
-                this.factoryList[i] = { ...u };
+                this.factoryFilterList[i] = { ...u };
             }
             else {
-                this.factoryList.push(u);
+                this.factoryFilterList.push(u);
             }
-            this.factoryList = [...this.factoryList]
+            this.factoryFilterList = [...this.factoryFilterList]
         });
         this.FactoryScopeDialog = false;
     }

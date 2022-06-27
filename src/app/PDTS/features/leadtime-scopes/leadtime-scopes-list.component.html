@@ -1,13 +1,14 @@
-<p-table #dt [value]="list" [scrollable]="true" [globalFilterFields]="['FactoryID'
-,'Module'
+<p-table #dt [value]="list" [scrollable]="true" [globalFilterFields]="['Module'
 ,'ModuleVariant'
 ,'ModuleVariantDescription'
 ,'PartNumber'
-,'LeadTimeVariation'
+,'Weeks'
+,'Weeks1'
+,'Weeks2'
 ]" styleClass="p-datatable-gridlines" scrollHeight="55vh">
     <ng-template pTemplate="caption">
         <div class="p-d-flex">
-            <div class="p-mt-2">
+            <!-- <div class="p-mt-2">
                 <label for="Factory" class="p-mr-4">Select Scope</label>
                 <p-dropdown [options]="factoryScopeList" [(ngModel)]="Scope" placeholder="Select Scope"
                     optionLabel="Scope" optionValue="Scope" (onChange)="onFactoryScopeSelect($event)">
@@ -19,7 +20,7 @@
                     </ng-template>
                 </p-dropdown>
                 
-            </div>
+            </div> -->
             <!-- <div class="p-mt-2">
                 <label for="Product" class="p-mr-4">Select scope</label>
                 <p-dropdown [options]="productList" [(ngModel)]="ProductID" placeholder="Select scope"
@@ -49,31 +50,26 @@
     </ng-template>
     <ng-template pTemplate="header">
         <tr>
-            <th style="width:75px">Edit</th>
             <th style="width:300px">Module</th>
-            <th>Module Variant </th>
-            <th style="width:300px">Module Variant Description </th>
+            <th style="width:100px">Module Variant </th>
+            <th style="width:500px">Module Variant Description </th>
             <th>Part ID</th>
-            <th>Factory Name</th>
-            <th>Factory leadtime</th>
+            <th>Weeks</th>
+            <th>Weeks+1</th>
             <!-- <th>Product leadtime</th> -->
-            <th>LeadTime deviation</th>
+            <th>Weeks+2</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-marketleadtime>
+    <ng-template pTemplate="body" let-leadtimeScope>
         <tr>
-            <td class="p-text-center" style="width:75px">
-                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
-                    (click)="onEditClick(marketleadtime)" title="Edit"></button>
-            </td>
-            <td style="width:300px">{{marketleadtime.Module}}</td>
-            <td>{{marketleadtime.ModuleVariant}}</td>
-            <td style="width:300px">{{marketleadtime.ModuleVariantDescription}}</td>
-            <td>{{marketleadtime.PartNumber}}</td>
-            <td>{{marketleadtime.FactoryName}}</td>
-            <td>{{marketleadtime.Factoryleadtime}}</td>
-            <!-- <td>{{marketleadtime.Productleadtime}}</td> -->
-            <td>{{marketleadtime.LeadTimeVariation}}</td>
+            <td style="width:300px">{{leadtimeScope.Module}}</td>
+            <td style="width:100px">{{leadtimeScope.ModuleVariant}}</td>
+            <td style="width:500px">{{leadtimeScope.ModuleVariantDescription}}</td>
+            <td>{{leadtimeScope.PartNumber}}</td>
+            <!-- <td><span [class]="'leadtimeScope-badge Weeks-' + (leadtimeScope.WeeksColor ? leadtimeScope.WeeksColor.toLowerCase() : '')">{{leadtimeScope.Weeks}}</span></td> -->
+            <td *ngIf = "leadtimeScope.Weeks" [style]="'background-color:' + leadtimeScope.WeeksColor">{{leadtimeScope.Weeks}}</td>
+            <td *ngIf = "leadtimeScope.Weeks1" [style]="'background-color:' + leadtimeScope.Weeks1Color">{{leadtimeScope.Weeks1}}</td>
+            <td>{{leadtimeScope.Weeks2}}</td>
         </tr>
     </ng-template>
 </p-table>

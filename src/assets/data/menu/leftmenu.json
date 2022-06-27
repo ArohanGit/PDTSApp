@@ -8,7 +8,7 @@
             ],
             "items": [
                 {
-                    "label": "Product Architecture",
+                    "label": "Product Delivery time scope",
                     "icon": "pi pi-fw pi-book",
                     "routerLink": [
                         "/PDTS/product-detail-page"
@@ -26,6 +26,13 @@
                     "icon": "pi pi-fw pi-book",
                     "routerLink": [
                         "/PDTS/market-leadtime-page"
+                    ]
+                },
+                {
+                    "label": "Leadtime Scope",
+                    "icon": "pi pi-fw pi-book",
+                    "routerLink": [
+                        "/PDTS/leadtime-scopes-page"
                     ]
                 }
             ]

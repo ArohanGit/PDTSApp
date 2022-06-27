@@ -41,14 +41,14 @@ export class ProductDetailPageComponent implements OnInit {
     onSave($event) {
         this.productdetailService.save($event).then(u => {
             
-            const i = this.productdetailList.findIndex(p => p.ProductDetailID === u.ProductDetailID);
+            const i = this.productdetailFilterList.findIndex(p => p.ProductDetailID === u.ProductDetailID);
             if (i >= 0) {
-                this.productdetailList[i] = { ...u };
+                this.productdetailFilterList[i] = { ...u };
             }
             else {
-                this.productdetailList.push(u);
+                this.productdetailFilterList.push(u);
             }
-            this.productdetailList = [...this.productdetailList]
+            this.productdetailFilterList = [...this.productdetailFilterList]
         });
         this.ProductDetailDialog = false;
     }
