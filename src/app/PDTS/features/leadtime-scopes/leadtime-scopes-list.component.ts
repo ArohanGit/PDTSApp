@@ -5,6 +5,8 @@ import { DestroyService } from '../../services/destroy.service';
 import { SelectionService } from '../../services/selection.service';
 import { MarketLeadtimeService } from '../../services/marketleadtime.service';
 import { LeadtimeScopeExt } from './leadtime-scope-ext';
+import { Factory } from '../../domain/factory';
+import { FactoryService } from '../../services/factory.service';
 
 @Component({
     selector: 'leadtime-scopes-list',
@@ -12,7 +14,7 @@ import { LeadtimeScopeExt } from './leadtime-scope-ext';
     providers: [DestroyService]
 })
 export class LeadtimeScopesListComponent implements OnInit {
-    @Output() onComboSelected = new EventEmitter<LeadtimeScopeExt>();
+    @Output() onChange = new EventEmitter<any>();
    
 
    
@@ -26,30 +28,39 @@ export class LeadtimeScopesListComponent implements OnInit {
     }
 
     private leadtimescopeDTO = {} as LeadtimeScopeExt;
-
+    factoryList: Factory[];
     
 
     constructor(
         private marketleadtimeService: MarketLeadtimeService,
         private selectionService: SelectionService,
         private readonly destroy$: DestroyService,
+        private factoryService: FactoryService,
     ) { }
 
     ngOnInit() {
         combineLatest([
             this.marketleadtimeService.getDTO(),
+            this.factoryService.get(),
             
         ])
             .pipe(takeUntil(this.destroy$))
             .subscribe(
-                ([leadtimescopeDTO]) => {
+                ([leadtimescopeDTO, factoryList]) => {
                     this.leadtimescopeDTO = {...this.leadtimescopeDTO, ...leadtimescopeDTO};
+                    this.factoryList = [...factoryList];
                     this.joinMasters();
                 }
                 , error => console.log('Could not load!')
             );
     }
 
+    onFactorySelect(e) {
+        debugger;
+        if (!e) return;
+        this.onChange.emit(e);
+        
+    }
       
     joinMasters() {
         // Join masters with respect to foreign keys. 

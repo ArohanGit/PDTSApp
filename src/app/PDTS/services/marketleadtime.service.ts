@@ -37,6 +37,14 @@ export class MarketLeadtimeService {
             .then(data => data);
     }
 
+    getproduct() {
+        debugger;
+        return this.http.get<any>(this.api.url + 'MarketLeadtime/GetProduct' )
+            .toPromise()
+            .then(res => res.Items as any)
+            .then(data => data);
+    }
+
     getleadtimescope() {
         debugger;
         return this.http.get<any>(this.api.url + 'MarketLeadtime/GetLeadtimeScope' )

@@ -8,19 +8,19 @@
 ]" styleClass="p-datatable-gridlines" scrollHeight="55vh">
     <ng-template pTemplate="caption">
         <div class="p-d-flex">
-            <!-- <div class="p-mt-2">
-                <label for="Factory" class="p-mr-4">Select Scope</label>
-                <p-dropdown [options]="factoryScopeList" [(ngModel)]="Scope" placeholder="Select Scope"
-                    optionLabel="Scope" optionValue="Scope" (onChange)="onFactoryScopeSelect($event)">
+            <div class="p-mt-2">
+                <label for="Factory" class="p-mr-4">Select Factory</label>
+                <p-dropdown [options]="factoryList" [(ngModel)]="FactoryID" placeholder="Select Factory"
+                    optionLabel="FactoryName" optionValue="FactoryID" (onChange)="onFactorySelect($event)">
                     <ng-template let-item pTemplate="item">
-                        {{item.Scope}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
+                        {{item.FactoryName}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
                     </ng-template>
                     <ng-template let-item pTemplate="selectedItem">
-                        {{item.Scope}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
+                        {{item.FactoryName}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
                     </ng-template>
                 </p-dropdown>
-                
-            </div> -->
+
+            </div>
             <!-- <div class="p-mt-2">
                 <label for="Product" class="p-mr-4">Select scope</label>
                 <p-dropdown [options]="productList" [(ngModel)]="ProductID" placeholder="Select scope"

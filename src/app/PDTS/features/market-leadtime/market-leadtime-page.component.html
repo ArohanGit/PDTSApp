@@ -1,10 +1,4 @@
 <p-panel>
-    <market-leadtime-list [list]="marketleadtimeFilterList" (onEdit)="onEdit($event)" (onChangeFactoryScope)="onChangeFactoryScope($event)">
+    <market-leadtime-list [list]="productFilterList" [moduleslist]="marketleadtimeProductWiseFilterList" (onEdit)="onEdit($event)" (onChange)="onChangeFactory($event)" (onChangeProduct)="onChangeProduct($event)">
     </market-leadtime-list>
-    <p-dialog [(visible)]="MarketLeadtimeDialog" [style]="{width: '650px'}" header="Market LeadTime"
-        [modal]="true" styleClass="p-fluid">
-        <market-leadtime-form [data]="marketleadtimeFormData" (onSave)="onSave($event)"
-            (onCancel)="onHide($event)">
-        </market-leadtime-form>
-    </p-dialog>
 </p-panel>

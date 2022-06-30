@@ -3,4 +3,5 @@ export interface Product {
     ProductNumber: string;
     ProductName: string;
     ValidFrom: Date;
+    Requestedleadtime: number;
 }

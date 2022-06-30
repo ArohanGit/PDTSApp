@@ -16,6 +16,7 @@ export class LeadtimeScopesPageComponent implements OnInit {
     public MarketLeadtimeDialog = false;
 
     leadtimescopeList: LeadtimeScopeExt[] = [];
+    leadtimescopeFilterList: LeadtimeScopeExt[] = [];
    
 
     constructor(private router: Router,
@@ -30,6 +31,11 @@ export class LeadtimeScopesPageComponent implements OnInit {
 
     }
      
-
+    onChange($event){
+        debugger;
+        const l  = [...this.leadtimescopeList.filter(d => d.FactoryID === $event.value)];
+        this.leadtimescopeFilterList = [...l];
+        
+        }
 
 }

@@ -1,4 +1,4 @@
-<p-panel>
-    <leadtime-scopes-list [list]="leadtimescopeList" >
+<p-panel title="Factory: Factory-X"> 
+    <leadtime-scopes-list [list]="leadtimescopeList" (onChange)="onChange($event)">
     </leadtime-scopes-list>
 </p-panel>

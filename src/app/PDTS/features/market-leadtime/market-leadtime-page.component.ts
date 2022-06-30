@@ -17,7 +17,10 @@ export class MarketLeadtimePageComponent implements OnInit {
 
     marketleadtimeList: MarketLeadtimeExt[] = [];
     marketleadtimeFilterList: MarketLeadtimeExt[] = [];
-    marketleadtimeFormData: MarketLeadtimeExt = {} as MarketLeadtimeExt;
+    marketleadtimeProductWiseFilterList: MarketLeadtimeExt[] = [];
+    productFilterList: MarketLeadtimeExt[] = [];
+    productList: MarketLeadtimeExt[] = [];
+    marketleadtimeFormData: { [s: string]: MarketLeadtimeExt } = {};
 
     constructor(private router: Router,
         private messageService: MessageService,
@@ -25,42 +28,49 @@ export class MarketLeadtimePageComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.marketleadtimeService.getproduct().then(p => {
+            this.productList = p;
+        });
         this.marketleadtimeService.getmarketleadtime().then(l => {
             this.marketleadtimeList = l;
         });
 
     }
-    onEdit($event) {
+    onEdit(product: MarketLeadtimeExt) {
         debugger;
-        this.marketleadtimeFormData = { ...$event };
-        this.MarketLeadtimeDialog = true;
-    }
-
-    onHide($event) {
-        this.MarketLeadtimeDialog = false;
+        //this.marketleadtimeFormData = { ...$event };
+        //this.MarketLeadtimeDialog = true;
+        this.marketleadtimeFormData[product.ProductID] = {...product};
     }
 
     onSave($event) {
-        this.marketleadtimeService.save($event).then(u => {
+        // this.marketleadtimeService.save($event).then(u => {
 
-            const i = this.marketleadtimeFilterList.findIndex(p => p.MarketLeadtimeID === u.MarketLeadtimeID);
-            if (i >= 0) {
-                this.marketleadtimeFilterList[i] = { ...u };
-            }
-            else {
-                this.marketleadtimeFilterList.push(u);
-            }
-            this.marketleadtimeFilterList = [...this.marketleadtimeFilterList]
-        });
-        this.MarketLeadtimeDialog = false;
+        //     const i = this.marketleadtimeFilterList.findIndex(p => p.MarketLeadtimeID === u.MarketLeadtimeID);
+        //     if (i >= 0) {
+        //         this.marketleadtimeFilterList[i] = { ...u };
+        //     }
+        //     else {
+        //         this.marketleadtimeFilterList.push(u);
+        //     }
+        //     this.marketleadtimeFilterList = [...this.marketleadtimeFilterList]
+        // });
+        // this.MarketLeadtimeDialog = false;
     }
 
    
-    onChangeFactoryScope($event) {
+    onChangeFactory($event) {
         debugger;
-        const l = [...this.marketleadtimeList.filter(d => d.Scope === $event.value)];
+        const p = [...this.productList.filter(dp => dp.FactoryID === $event.value)];
+        this.productFilterList = [...p];
+        const l = [...this.marketleadtimeList.filter(d => d.FactoryID === $event.value)];
         this.marketleadtimeFilterList = [...l];
+    }
 
+    onChangeProduct($event) {
+        debugger;
+        const f = [...this.marketleadtimeList.filter(d => d.ProductID === $event)];
+        this.marketleadtimeProductWiseFilterList = [...f];
     }
 
     // onChangeProduct($event) {

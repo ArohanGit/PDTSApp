@@ -29,7 +29,7 @@
                     ]
                 },
                 {
-                    "label": "Leadtime Scope",
+                    "label": "Factory Leadtime",
                     "icon": "pi pi-fw pi-book",
                     "routerLink": [
                         "/PDTS/leadtime-scopes-page"

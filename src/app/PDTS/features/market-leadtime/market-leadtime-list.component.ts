@@ -5,12 +5,8 @@ import { DestroyService } from '../../services/destroy.service';
 import { SelectionService } from '../../services/selection.service';
 import { FactoryService } from '../../services/factory.service';
 import { Factory } from '../../domain/factory';
-import { MarketLeadtime } from '../../domain/market-leadtime';
-import { Product } from 'src/assets/demo/applicationservice';
-import { ProductService } from '../../services/product.service';
 import { MarketLeadtimeService } from '../../services/marketleadtime.service';
 import { MarketLeadtimeExt } from './market-leadtime-ext';
-import { FactoryScopesService } from '../../services/factoryscopes.service';
 
 @Component({
     selector: 'market-leadtime-list',
@@ -20,11 +16,10 @@ import { FactoryScopesService } from '../../services/factoryscopes.service';
 export class MarketLeadtimeListComponent implements OnInit {
     @Output() onAdd = new EventEmitter<MarketLeadtimeExt>();
     @Output() onEdit = new EventEmitter<MarketLeadtimeExt>();
-    @Output() onComboSelected = new EventEmitter<MarketLeadtimeExt>();
-    @Output() onChangeFactoryScope = new EventEmitter<any>();
+    @Output() onChange = new EventEmitter<any>();
     @Output() onChangeProduct = new EventEmitter<any>();
-
    
+      
     _list: MarketLeadtimeExt[] = [];
     get list(): MarketLeadtimeExt[] {
         return this._list;
@@ -34,17 +29,24 @@ export class MarketLeadtimeListComponent implements OnInit {
         this.joinMasters();
     }
 
+    _moduleslist: MarketLeadtimeExt[] = [];
+    get moduleslist(): MarketLeadtimeExt[] {
+        return this._moduleslist;
+    }
+    @Input() set moduleslist(value: MarketLeadtimeExt[]) {
+        this._moduleslist = [...value];
+        this.joinMasters();
+    }
+
     private marketleadtimeDTO = {} as MarketLeadtimeExt;
 
     // Masters wrt foreign keys.
-    factoryScopeList: any[];
-    productList: Product[];
+    factoryList: Factory[];
     
 
     constructor(
         private marketleadtimeService: MarketLeadtimeService,
-        private factoryScopesService: FactoryScopesService,
-        private productService: ProductService,
+        private factoryService: FactoryService,
         private selectionService: SelectionService,
         private readonly destroy$: DestroyService,
     ) { }
@@ -52,16 +54,14 @@ export class MarketLeadtimeListComponent implements OnInit {
     ngOnInit() {
         combineLatest([
             this.marketleadtimeService.getDTO(),
-            this.factoryScopesService.getScope(),
-            this.productService.get(),
+            this.factoryService.get(),
             
         ])
             .pipe(takeUntil(this.destroy$))
             .subscribe(
-                ([marketleadtimeDTO, factoryScopeList, productList]) => {
+                ([marketleadtimeDTO, factoryList]) => {
                     this.marketleadtimeDTO = {...this.marketleadtimeDTO, ...marketleadtimeDTO};
-                    this.factoryScopeList = [...factoryScopeList];
-                    this.productList = [...productList];
+                    this.factoryList = [...factoryList];
                     this.joinMasters();
                 }
                 , error => console.log('Could not load!')
@@ -81,17 +81,19 @@ export class MarketLeadtimeListComponent implements OnInit {
          this.onEdit.emit(marketleadtime);
     }
   
-    onFactoryScopeSelect(e) {
+    onFactorySelect(e) {
+        debugger;
         if (!e) return;
-        this.onChangeFactoryScope.emit(e);
-        
+        this.onChange.emit(e);        
     }
 
-    onProjectSelect(e) {
+    onProductSelect(e) {
+        debugger;
         if (!e) return;
-        this.onChangeProduct.emit(e);
-        
+        this.onChangeProduct.emit(e);   
     }
+
+   
 
 
     joinMasters() {
