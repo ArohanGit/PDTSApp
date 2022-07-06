@@ -1,10 +1,10 @@
 <p-toast></p-toast>
-<p-table [value]="list" dataKey="ProductName" editMode="row" responsiveLayout="scroll">
+<p-table [value]="list" dataKey="ProductName" [scrollable]="true" editMode="row" responsiveLayout="scroll">
     <ng-template pTemplate="caption">
         <div class="p-d-flex">
             <div class="p-mt-2">
-                <label for="Factory" class="p-mr-4">Select Factory</label>
-                <p-dropdown [options]="factoryList" [(ngModel)]="FactoryID" placeholder="Select Factory"
+                <label for="Factory" class="p-mr-4">Select factory</label>
+                <p-dropdown [options]="factoryList" [(ngModel)]="FactoryID" placeholder="Select factory"
                     optionLabel="FactoryName" optionValue="FactoryID" (onChange)="onFactorySelect($event)">
                     <ng-template let-item pTemplate="item">
                         {{item.FactoryName}} ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
@@ -15,11 +15,11 @@
                 </p-dropdown>
 
             </div>
-            <span class="p-input-icon-left p-ml-auto">
+            <!-- <span class="p-input-icon-left p-ml-auto">
                 <i class="pi pi-search"></i>
                 <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                     placeholder="Search keyword" />
-            </span>
+            </span> -->
             <!-- <div>
                 <button pButton pRipple type="button" icon="pi pi-plus" (click)="onAddClick()" class="p-button-rounded"
                     title="New"></button>
@@ -29,8 +29,8 @@
     <ng-template pTemplate="header">
         <tr>
             <th style="width: 3rem"></th>
-            <th>PDTS Scope Name</th>
-            <th>Requested leadtime</th>
+            <th style="width:20rem">PDTS scope name</th>
+            <th style="text-align: right;">Requested leadtime (in days)</th>
             <th style="width:8rem"></th>
             <th></th>
             <th></th>
@@ -42,8 +42,8 @@
             <td>
                 <button type="button" pButton pRipple [pRowToggler]="product"  (click)="onProductSelect(product.ProductID)" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
             </td>
-            <td>
-                {{product.ProductName}}
+            <td style="width:20rem">
+                {{product.FactoryName}} - {{product.ProductName}}
                 <!-- <p-cellEditor>
                     <ng-template pTemplate="input">
                         <input pInputText type="text" [(ngModel)]="product.ProductName">
@@ -53,10 +53,10 @@
                     </ng-template>
                 </p-cellEditor> -->
             </td>
-            <td>
+            <td style="text-align: right;">
                 <p-cellEditor>
                     <ng-template pTemplate="input">
-                        <input pInputText type="text" [(ngModel)]="product.Requestedleadtime">
+                        <input style="text-align: right;" pInputText type="text" [(ngModel)]="product.Requestedleadtime">
                     </ng-template>
                     <ng-template pTemplate="output">
                         {{product.Requestedleadtime}}
@@ -80,15 +80,34 @@
         <tr>
             <td colspan="7">
                 <div class="p-3">
-                    <p-table [value]="moduleslist" dataKey="ProductID">
+                    <p-table [value]="moduleslist" [scrollable]="true"  dataKey="ProductID" scrollHeight="45vh">
                         <ng-template pTemplate="header">
                             <tr>
-                                <th style="width:300px">Module</th>
-                                <th style="width:100px">Module Variant </th>
-                                <th style="width:500px">Module Variant Description </th>
-                                <th style="width:100px">Part ID</th>
-                                <th style="width:100px">Factory leadtime</th>
-                                <th>LeadTime deviation</th>
+                                <th style="width:300px">
+                                    <div class="flex justify-content-center align-items-center">
+                                        Module
+                                        <p-columnFilter type="text" field="Module" display="menu"></p-columnFilter>
+                                    </div>
+                                </th>
+                                <th style="width:100px">
+                                    <div class="flex justify-content-center align-items-center">
+                                        Module variant
+                                        <p-columnFilter type="text" field="ModuleVariant" display="menu"></p-columnFilter>
+                                    </div>
+                                </th>
+                                <th style="width:500px">
+                                    <div class="flex justify-content-center align-items-center">
+                                        Module variant description
+                                        <p-columnFilter type="text" field="ModuleVariantDescription" display="menu"></p-columnFilter>
+                                    </div>
+                                </th>
+                                <th style="width:100px">
+                                    <div class="flex justify-content-center align-items-center">
+                                        Part ID
+                                        <p-columnFilter type="text" field="PartNumber" display="menu"></p-columnFilter>
+                                    </div></th>
+                                <th style="text-align: right; width:80px">Factory leadtime (in days)</th>
+                                <th style="text-align: right; width:90px"> LeadTime deviation (in days)</th>
                             </tr>
                         </ng-template>
                         <ng-template pTemplate="body" let-modules>
@@ -97,11 +116,11 @@
                                 <td style="width:100px">{{modules.ModuleVariant}}</td>
                                 <td style="width:500px">{{modules.ModuleVariantDescription}}</td>
                                 <td style="width:100px">{{modules.PartNumber}}</td>
-                                <td style="width:100px">{{modules.Factoryleadtime}}</td>
-                                <td pEditableColumn>
+                                <td style="text-align: right; width:80px">{{modules.Factoryleadtime}}</td>
+                                <td style="text-align: right; width:90px" pEditableColumn>
                                     <p-cellEditor >
                                         <ng-template pTemplate="input">
-                                            <input style="width:60px" pInputText type="text" [(ngModel)]="modules.LeadTimeVariation">
+                                            <input style="text-align: right; width:80px" pInputText type="text" [(ngModel)]="modules.LeadTimeVariation">
                                         </ng-template>
                                         <ng-template pTemplate="output">
                                             {{modules.LeadTimeVariation}}

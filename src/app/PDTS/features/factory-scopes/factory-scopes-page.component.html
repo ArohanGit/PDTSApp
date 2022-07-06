@@ -1,4 +1,9 @@
 <p-panel>
+    
+    <!-- <div class="p-mb-5" style="font-size: small; font-weight: bold;">
+        <i class="pi pi-exclamation-triangle" style="font-size: 1rem"></i>
+        List of factory scopes from .xml files.
+    </div> -->
     <factory-scopes-list [list]="factoryFilterList" (onEdit)="onEdit($event)" (onChange)="onChange($event)"></factory-scopes-list>
     <p-dialog [(visible)]="FactoryScopeDialog" [style]="{width: '650px'}" header="Factory Scope" [modal]="true"
     styleClass="p-fluid">

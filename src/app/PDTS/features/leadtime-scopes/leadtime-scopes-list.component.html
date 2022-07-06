@@ -9,18 +9,22 @@
     <ng-template pTemplate="caption">
         <div class="p-d-flex">
             <div class="p-mt-2">
-                <label for="Factory" class="p-mr-4">Select Factory</label>
-                <p-dropdown [options]="factoryList" [(ngModel)]="FactoryID" placeholder="Select Factory"
+                <label for="Factory" class="p-mr-4">Select factory</label>
+                <p-dropdown [options]="factoryList" [(ngModel)]="FactoryID" placeholder="Select factory"
                     optionLabel="FactoryName" optionValue="FactoryID" (onChange)="onFactorySelect($event)">
                     <ng-template let-item pTemplate="item">
-                        {{item.FactoryName}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
+                        {{item.FactoryName}} ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
                     </ng-template>
                     <ng-template let-item pTemplate="selectedItem">
-                        {{item.FactoryName}}  ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
+                        {{item.FactoryName}} ( {{item.ScopeValidFrom | date: 'dd/MM/yyyy'}} )
                     </ng-template>
                 </p-dropdown>
 
             </div>
+            <span class="p-input-icon-left p-ml-auto">
+                <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()"
+                    class="p-button-success mr-2" pTooltip="XLSX" tooltipPosition="bottom"></button>
+            </span>
             <!-- <div class="p-mt-2">
                 <label for="Product" class="p-mr-4">Select scope</label>
                 <p-dropdown [options]="productList" [(ngModel)]="ProductID" placeholder="Select scope"
@@ -37,11 +41,11 @@
             <!-- <div class="p-mt-4 p-ml-auto">
                 <lable for="Product"  style="font-size: medium; font-weight: bold; color: blue;">Valid From 15/06/2022</lable>
             </div> -->
-            <span class="p-input-icon-left p-ml-auto">
+            <!-- <span class="p-input-icon-left p-ml-auto">
                 <i class="pi pi-search"></i>
                 <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                     placeholder="Search keyword" />
-            </span>
+            </span> -->
             <!-- <div>
                 <button pButton pRipple type="button" icon="pi pi-plus" (click)="onAddClick()" class="p-button-rounded"
                     title="New"></button>
@@ -50,26 +54,108 @@
     </ng-template>
     <ng-template pTemplate="header">
         <tr>
-            <th style="width:300px">Module</th>
-            <th style="width:100px">Module Variant </th>
-            <th style="width:500px">Module Variant Description </th>
-            <th>Part ID</th>
-            <th>Weeks</th>
-            <th>Weeks+1</th>
-            <!-- <th>Product leadtime</th> -->
-            <th>Weeks+2</th>
+            <th style="width:250px">
+        <tr>
+            <th>Module</th>
+            <th>
+                <div>
+                    <p-columnFilter type="text" field="Module" display="menu" style="text-align: right;">
+                    </p-columnFilter>
+                </div>
+                <div pSortableColumn="Module">
+                    <p-sortIcon field="Module"></p-sortIcon>
+                </div>
+            </th>
+        </tr>
+        </th>
+        <th style="width:100px">
+            <tr>
+                <th>Module variant</th>
+                <th>
+                    <div style="text-align: right;">
+                        <p-columnFilter type="text" field="ModuleVariant" display="menu">
+                        </p-columnFilter>
+                    </div>
+                    <div pSortableColumn="ModuleVariant" style="text-align: right;">
+                        <p-sortIcon field="ModuleVariant"></p-sortIcon>
+                    </div>
+                </th>
+            </tr>
+        </th>
+        <th style="width:450px">
+            <tr>
+                <th>Module variant description</th>
+                <th>
+                    <div>
+                        <p-columnFilter type="text" field="ModuleVariantDescription" display="menu">
+                        </p-columnFilter>
+                    </div>
+                    <div pSortableColumn="ModuleVariantDescription">
+                        <p-sortIcon field="ModuleVariantDescription"></p-sortIcon>
+                    </div>
+                </th>
+            </tr>
+        </th>
+        <th style="width:130px">
+            <tr>
+                <th>Part ID</th>
+                <th>
+                    <div>
+                        <p-columnFilter type="text" field="PartNumber" display="menu"></p-columnFilter>
+                    </div>
+                    <div pSortableColumn="PartNumber">
+                        <p-sortIcon field="PartNumber"></p-sortIcon>
+                    </div>
+                </th>
+            </tr>
+        </th>
+        <th style="text-align: right; width:100px">
+            <tr>
+                <th>Factory leadtime (in days)</th>
+                <th>
+                    <div>
+                        <p-columnFilter type="numeric" field="leadtime" display="menu"></p-columnFilter>
+                    </div>
+                    <div pSortableColumn="leadtime">
+                        <p-sortIcon field="leadtime"></p-sortIcon>
+                    </div>
+                </th>
+            </tr>
+        </th>
+
+        <th style="width:115px">
+            <tr>
+                <th>Market leadtime scopes (in days)</th>
+                <th>
+                    <div>
+                        <p-columnFilter type="numeric" field="Multipleleadtime" display="menu"></p-columnFilter>
+                    </div>
+                    <div pSortableColumn="Multipleleadtime">
+                        <p-sortIcon field="Multipleleadtime"></p-sortIcon>
+                    </div>
+                </th>
+            </tr>
+        </th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-leadtimeScope>
+    <ng-template pTemplate="body" let-factoryleadtime>
         <tr>
-            <td style="width:300px">{{leadtimeScope.Module}}</td>
-            <td style="width:100px">{{leadtimeScope.ModuleVariant}}</td>
-            <td style="width:500px">{{leadtimeScope.ModuleVariantDescription}}</td>
-            <td>{{leadtimeScope.PartNumber}}</td>
-            <!-- <td><span [class]="'leadtimeScope-badge Weeks-' + (leadtimeScope.WeeksColor ? leadtimeScope.WeeksColor.toLowerCase() : '')">{{leadtimeScope.Weeks}}</span></td> -->
-            <td *ngIf = "leadtimeScope.Weeks" [style]="'background-color:' + leadtimeScope.WeeksColor">{{leadtimeScope.Weeks}}</td>
-            <td *ngIf = "leadtimeScope.Weeks1" [style]="'background-color:' + leadtimeScope.Weeks1Color">{{leadtimeScope.Weeks1}}</td>
-            <td>{{leadtimeScope.Weeks2}}</td>
+            <td style="width:250px">{{factoryleadtime.Module}}</td>
+            <td style="width:100px">{{factoryleadtime.ModuleVariant}}</td>
+            <td style="width:450px">{{factoryleadtime.ModuleVariantDescription}}</td>
+            <td style="width:130px">{{factoryleadtime.PartNumber}}</td>
+            <td style="text-align: right; width:100px" pEditableColumn>
+                <p-cellEditor>
+                    <ng-template pTemplate="input">
+                        <input style="text-align: right; width:60px" pInputText type="text"
+                            [(ngModel)]="factoryleadtime.leadtime">
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{factoryleadtime.leadtime}}
+                    </ng-template>
+                </p-cellEditor>
+            </td>
+            <td style="width:115px">{{factoryleadtime.Multipleleadtime}}</td>
         </tr>
     </ng-template>
 </p-table>

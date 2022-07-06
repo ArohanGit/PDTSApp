@@ -7,6 +7,7 @@ import { MarketLeadtimeService } from '../../services/marketleadtime.service';
 import { LeadtimeScopeExt } from './leadtime-scope-ext';
 import { Factory } from '../../domain/factory';
 import { FactoryService } from '../../services/factory.service';
+import { FactoryScope } from '../../domain/factory-scope';
 
 @Component({
     selector: 'leadtime-scopes-list',
@@ -15,14 +16,15 @@ import { FactoryService } from '../../services/factory.service';
 })
 export class LeadtimeScopesListComponent implements OnInit {
     @Output() onChange = new EventEmitter<any>();
+    @Output() onExportExcel = new EventEmitter();
    
 
    
-    _list: LeadtimeScopeExt[] = [];
-    get list(): LeadtimeScopeExt[] {
+    _list: FactoryScope[] = [];
+    get list(): FactoryScope[] {
         return this._list;
     }
-    @Input() set list(value: LeadtimeScopeExt[]) {
+    @Input() set list(value: FactoryScope[]) {
         this._list = [...value];
         this.joinMasters();
     }
@@ -60,6 +62,10 @@ export class LeadtimeScopesListComponent implements OnInit {
         if (!e) return;
         this.onChange.emit(e);
         
+    }
+
+    exportExcel() {
+        this.onExportExcel.emit();
     }
       
     joinMasters() {

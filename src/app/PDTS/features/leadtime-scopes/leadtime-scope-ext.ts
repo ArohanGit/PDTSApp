@@ -8,4 +8,5 @@ export interface LeadtimeScopeExt extends MarketLeadtime {
     Weeks1Color: string;
     Weeks2Color: string;
     FactoryID: number;
+    Factoryleadtime: number;
 }

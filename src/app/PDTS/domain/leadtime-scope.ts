@@ -7,4 +7,5 @@ export interface LeadtimeScope {
     Weeks: number;
     Weeks1: number;  
     Weeks2: number;
+    Requestedleadtime: number;
 }

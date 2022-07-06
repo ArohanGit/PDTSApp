@@ -22,11 +22,11 @@
             <!-- <div class="p-mt-4 p-ml-auto">
                 <lable for="Product"  style="font-size: medium; font-weight: bold; color: blue;">Valid From 15/06/2022</lable>
             </div> -->
-            <span class="p-input-icon-left p-ml-auto">
+            <!-- <span class="p-input-icon-left p-ml-auto">
                  <i class="pi pi-search"></i>
                 <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
                     placeholder="Search keyword" />
-            </span>
+            </span> -->
             <!-- <div>
                 <button pButton pRipple type="button" icon="pi pi-plus" (click)="onAddClick()" class="p-button-rounded"
                     title="New"></button>
@@ -36,10 +36,10 @@
     <ng-template pTemplate="header">
         <tr>
             <!-- <th style="width:75px">Edit</th> -->
-            <th style="width:300px">Module</th>
-            <th>Module Variant </th>
-            <th style="width:400px">Module Variant Description </th>
-            <th>Part ID</th>
+            <th>Module</th>
+            <th>Module variant </th>
+            <th style="width:500px">Module variant description </th>
+            <th style="width:200px"> Part ID</th>
             <!-- <th>Lead Time</th> -->
         </tr>
     </ng-template>
@@ -49,10 +49,10 @@
                 <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"
                     (click)="onEditClick(productdetail)" title="Edit"></button>
             </td> -->
-            <td style="width:300px">{{productdetail.Module}}</td>
+            <td>{{productdetail.Module}}</td>
             <td>{{productdetail.ModuleVariant}}</td>
-            <td style="width:400px"> {{productdetail.ModuleVariantDescription}}</td>
-            <td>{{productdetail.PartNumber}}</td>
+            <td style="width:500px"> {{productdetail.ModuleVariantDescription}}</td>
+            <td style="width:200px">{{productdetail.PartNumber}}</td>
             <!-- <td>{{productdetail.LeadTime}}</td> -->
         </tr>
     </ng-template>
