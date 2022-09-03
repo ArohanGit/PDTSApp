@@ -1,0 +1,8 @@
+<p-panel>
+    <role-list [list]="roleList" (onAdd)="onAdd()" (onEdit)="onEdit($event)"></role-list>
+    <p-dialog [(visible)]="displayRoleModal" [style]="{width: '450px'}" header="User" styleClass="p-fluid">
+        <role-form [data]="role" (onSave)="onSave($event)" (onCancel)="onCancel()">
+        </role-form>
+    </p-dialog>
+</p-panel>
+<p-toast position="top-right" key="tr"></p-toast>

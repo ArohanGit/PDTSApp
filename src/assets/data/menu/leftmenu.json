@@ -36,6 +36,29 @@
                     ]
                 }
             ]
+        },
+        {
+            "label": "Master",
+            "icon": "pi pi-fw pi-home",
+            "routerLink": [
+                "/PDTS"
+            ],
+            "items": [
+                {
+                    "label": "User",
+                    "icon": "pi pi-fw pi-sitemap",
+                    "routerLink": [
+                        "/PDTS/user-page"
+                    ]
+                },
+                {
+                    "label": "Role",
+                    "icon": "pi pi-fw pi-users",
+                    "routerLink": [
+                        "/PDTS/role-page"
+                    ]
+                }
+            ]
         }
     ]
 }

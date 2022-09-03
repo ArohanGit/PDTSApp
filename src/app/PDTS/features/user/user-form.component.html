@@ -1,0 +1,67 @@
+<p-panel>
+    <div class="p-mb-20">
+        <!-- {{ this.user | json }} -->
+        <div class="p-col p-md-12">
+
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col p-md-12">
+                    <label for="WebUserID">AD ID</label>
+                    <input id="WebUserID" type="text" aria-describedby="adid-help" pInputText
+                        [(ngModel)]="formData.WebUserID" [required]="true">
+                    <small *ngIf="isValid()" id="adid-help" class="p-error">Field required.</small>
+                </div>
+
+                <div class="p-field p-col p-md-12">
+                    <label for="Name">Name</label>
+                    <input id="Name" type="text" aria-describedby="username-help" pInputText [(ngModel)]="formData.Name"
+                        [required]="true">
+                    <small *ngIf="isValid()" id="username-help" class="p-error">Field required.</small>
+                </div>
+
+                <div class="p-field p-col p-md-12">
+                    <label for="EMailAddress">E-Mail Address</label>
+                    <input id="EMailAddress" type="text" aria-describedby="email-help" pInputText
+                        [(ngModel)]="formData.EMailAddress" email="true" [required]="true">
+                    <small *ngIf="isValid()" id="email-help" class="p-error">Field required.</small>
+                </div>
+
+                <div class="p-field p-col p-md-12">
+                    <label for="Role">Role</label>
+                    <p-dropdown [options]="roleList" aria-describedby="rolename-help" [(ngModel)]="formData.RoleID"
+                        placeholder="Select Role" optionLabel="Name" [showClear]="false"></p-dropdown>
+                    <small *ngIf="isValid()" id="rolename-help" class="p-error">Field required.</small>
+                </div>
+
+                <div class="p-field p-col p-md-12">
+                    <label for="IsLeft">Is Left: </label>
+                    <div class="p-formgroup-inline">
+                        <div class="p-field-radiobutton">
+                            <p-radioButton name="IsLeft1" value="Y" [(ngModel)]="formData.IsLeft" inputId="IsLeft1">
+                            </p-radioButton>
+                            <label for="IsLeft1">YES</label>
+                        </div>
+                        <div class="p-field-radiobutton">
+                            <p-radioButton name="IsLeft2" value="N" [(ngModel)]="formData.IsLeft" inputId="IsLeft2">
+                            </p-radioButton>
+                            <label for="IsLeft2">NO</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <div class="p-md-12">
+            <div class="p-d-flex p-jc-end">
+                <div class="p-mr-2">
+                    <button pButton icon="pi pi-check" (click)="onSaveClick()" label="Save" class="p-button-primary">
+                    </button>
+                </div>
+                <div class="p-mr-2">
+                    <button pButton icon="pi pi-times" (click)="onCancelClick()" label="Cancel"
+                        class="p-button-primary"></button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-panel>

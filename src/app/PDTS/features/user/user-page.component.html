@@ -1,0 +1,8 @@
+<p-panel>
+    <user-list [list]="userList" (onAdd)="onAdd()" (onEdit)="onEdit($event)"></user-list>
+    <p-dialog [(visible)]="displayUserModal" [style]="{width: '450px'}" header="User" styleClass="p-fluid">
+        <user-form [data]="user" (onSave)="onSave($event)" (onCancel)="onCancel()">
+        </user-form>
+    </p-dialog>
+</p-panel>
+<p-toast position="top-right" key="tr"></p-toast>

@@ -1,0 +1,30 @@
+<p-panel>
+    <div class="p-mb-20">
+        <!-- {{ this.user | json }} -->
+        <div class="p-col p-md-12">
+
+            <div class="p-fluid p-formgrid p-grid">
+                <div class="p-field p-col p-md-12">
+                    <label for="Name">Role Name</label>
+                    <input id="Name" type="text" aria-describedby="rolename-help" pInputText [(ngModel)]="formData.Name"
+                        [required]="true">
+                    <small *ngIf="isValid()" id="rolename-help" class="p-error">Field required.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <div class="p-md-12">
+            <div class="p-d-flex p-jc-end">
+                <div class="p-mr-2">
+                    <button pButton icon="pi pi-check" (click)="onSaveClick()" label="Save" class="p-button-primary" [disabled]="isValid()">
+                    </button>
+                </div>
+                <div class="p-mr-2">
+                    <button pButton icon="pi pi-times" (click)="displayRoleModal=false" label="Cancel"
+                    class="p-button-primary"></button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-panel>

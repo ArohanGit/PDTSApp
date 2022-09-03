@@ -36,10 +36,78 @@
     <ng-template pTemplate="header">
         <tr>
             <!-- <th style="width:75px">Edit</th> -->
-            <th>Module</th>
-            <th>Module variant </th>
-            <th style="width:500px">Module variant description </th>
-            <th style="width:200px"> Part ID</th>
+            <th>
+                <tr>
+                    <th>Module</th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="text" field="Module" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="Module">
+                            <p-sortIcon field="Module"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th>
+                <tr>
+                    <th>Module variant</th>
+                    <th>
+                        <div style="text-align: right;">
+                            <!-- <p-columnFilter type="text" field="ModuleVariant" display="menu">
+                            </p-columnFilter> -->
+                            <p-columnFilter field="ModuleVariant" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                                <ng-template pTemplate="header">
+                                    <div class="p-px-3 p-pt-3 p-pb-0">
+                                        <span class="p-text-bold">Module variant Picker</span>
+                                    </div>
+                                </ng-template>
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                    <p-multiSelect [ngModel]="value" [options]="list" placeholder="Any" (onChange)="filter($event.value)" optionLabel="ModuleVariant" optionValue="ModuleVariant">
+                                        <ng-template let-option pTemplate="item">
+                                            <div class="p-multiselect-representative-option">                
+                                                <span class="p-ml-1">{{option.ModuleVariant}}</span>
+                                            </div>
+                                        </ng-template>
+                                    </p-multiSelect>
+                                </ng-template>
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="ModuleVariant" style="text-align: right;">
+                            <p-sortIcon field="ModuleVariant"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th style="width:500px">
+                <tr>
+                    <th>Module variant description </th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="text" field="ModuleVariantDescription" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="ModuleVariantDescription">
+                            <p-sortIcon field="ModuleVariantDescription"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th style="width:200px">
+                <tr>
+                    <th> Part ID</th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="text" field="PartNumber" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="PartNumber">
+                            <p-sortIcon field="PartNumber"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
             <!-- <th>Lead Time</th> -->
         </tr>
     </ng-template>
@@ -53,7 +121,6 @@
             <td>{{productdetail.ModuleVariant}}</td>
             <td style="width:500px"> {{productdetail.ModuleVariantDescription}}</td>
             <td style="width:200px">{{productdetail.PartNumber}}</td>
-            <!-- <td>{{productdetail.LeadTime}}</td> -->
         </tr>
     </ng-template>
 </p-table>

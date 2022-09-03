@@ -3,6 +3,6 @@
         <i class="pi pi-exclamation-triangle" style="font-size: 1rem"></i>
         Factory leadtime willenter by user.
     </div> -->
-    <leadtime-scopes-list [list]="leadtimescopeFilterList" (onChange)="onChange($event)" (onExportExcel)="exportExcel()">
+    <leadtime-scopes-list [list]="leadtimescopeFilterList" (onChange)="onChange($event)" (onExportExcel)="exportExcel()" (onSave)="onSave($event)">
     </leadtime-scopes-list>
 </p-panel>

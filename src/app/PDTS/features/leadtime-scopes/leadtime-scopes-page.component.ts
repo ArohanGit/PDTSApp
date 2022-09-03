@@ -56,4 +56,10 @@ export class LeadtimeScopesPageComponent implements OnInit {
             FileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
         }    
 
+        onSave($event) {
+            //this.factoryscopesService.save($event).then(u => {
+                
+                
+        }
+
 }

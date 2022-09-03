@@ -24,6 +24,14 @@ import { MarketLeadtimePageComponent } from './features/market-leadtime/market-l
 import { MarketLeadtimeService } from './services/marketleadtime.service';
 import { LeadtimeScopesListComponent } from './features/leadtime-scopes/leadtime-scopes-list.component';
 import { LeadtimeScopesPageComponent } from './features/leadtime-scopes/leadtime-scopes-page.component';
+import { UserService } from './services/user.service';
+import { RoleService } from './services/role.service';
+import { UserFormComponent } from './features/user/user-form.component';
+import { UserListComponent } from './features/user/user-list.component';
+import { UserPageComponent } from './features/user/user-page.component';
+import { RoleFormComponent } from './features/role/role-form.component';
+import { RoleListComponent } from './features/role/role-list.component';
+import { RolePageComponent } from './features/role/role-page.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +46,14 @@ import { LeadtimeScopesPageComponent } from './features/leadtime-scopes/leadtime
         MarketLeadtimeListComponent,
         MarketLeadtimePageComponent,
         LeadtimeScopesListComponent,
-        LeadtimeScopesPageComponent
+        LeadtimeScopesPageComponent,
+        UserFormComponent,
+        UserListComponent,
+        UserPageComponent,
+        RoleFormComponent,
+        RoleListComponent,
+        RolePageComponent,
+
     ],
     imports: [
         CommonModule,
@@ -63,7 +78,9 @@ import { LeadtimeScopesPageComponent } from './features/leadtime-scopes/leadtime
         FactoryService,
         ProductService,
         ProductDetailService,
-        MarketLeadtimeService
+        MarketLeadtimeService,
+        UserService,
+        RoleService,
     ],
     exports: [
         

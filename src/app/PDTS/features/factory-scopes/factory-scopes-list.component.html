@@ -20,6 +20,7 @@
                 </p-dropdown>
 
             </div>
+            
             <!-- <div class="p-mt-4 p-ml-auto">
                 <lable for="Product"  style="font-size: medium; font-weight: bold; color: blue;">Valid From 15/06/2022</lable>
             </div> -->
@@ -33,16 +34,114 @@
                     title="New"></button>
             </div> -->
         </div>
+        <div style="text-align: right;">
+            <lable  style="font-size: small; color: blue;">(*): In Calendar Days</lable>
+        </div>
     </ng-template>
     <ng-template pTemplate="header">
         <tr>
             <!-- <th style="width:75px">Edit</th>
             <th>Scope</th> -->
-            <th style="width:250px">Module</th>
-            <th style="width:100px">Module variant </th>
-            <th style="width:450px">Module variant description </th>
-            <th style="width:100px">Part ID</th>
-            <th style="width:60px">Factory leadtime (in days)</th>
+            <th style="width:250px">                
+                <tr>
+                    <th>Module</th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="text" field="Module" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="Module">
+                            <p-sortIcon field="Module"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th style="width:100px">
+                <tr>
+                    <th>Module variant</th>
+                    <th>
+                        <div style="text-align: right;">
+                            <!-- <p-columnFilter type="text" field="ModuleVariant" display="menu">
+                            </p-columnFilter> -->
+                            <p-columnFilter field="ModuleVariant" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                                <ng-template pTemplate="header">
+                                    <div class="p-px-3 p-pt-3 p-pb-0">
+                                        <span class="p-text-bold">Module variant Picker</span>
+                                    </div>
+                                </ng-template>
+                                <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                    <p-multiSelect [ngModel]="value" [options]="list" placeholder="Any" (onChange)="filter($event.value)" optionLabel="ModuleVariant" optionValue="ModuleVariant">
+                                        <ng-template let-option pTemplate="item">
+                                            <div class="p-multiselect-representative-option">                
+                                                <span class="p-ml-1">{{option.ModuleVariant}}</span>
+                                            </div>
+                                        </ng-template>
+                                    </p-multiSelect>
+                                </ng-template>
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="ModuleVariant" style="text-align: right;">
+                            <p-sortIcon field="ModuleVariant"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th style="width:450px">                
+                <tr>
+                    <th>Module variant description </th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="text" field="ModuleVariantDescription" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="ModuleVariantDescription">
+                            <p-sortIcon field="ModuleVariantDescription"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th style="width:100px">               
+                <tr>
+                    <th> Part ID</th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="text" field="PartNumber" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="PartNumber">
+                            <p-sortIcon field="PartNumber"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th style="width:100px">               
+                <tr>
+                    <th> Factory leadtime (*)</th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="numeric" field="LeadTime" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="LeadTime">
+                            <p-sortIcon field="LeadTime"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
+            <th style="width:150px">               
+                <tr>
+                    <th> Agreed/Target Leadtime (*)</th>
+                    <th>
+                        <div>
+                            <p-columnFilter type="numeric" field="AgreedTargetLeadtime" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            </p-columnFilter>
+                        </div>
+                        <div pSortableColumn="AgreedTargetLeadtime">
+                            <p-sortIcon field="AgreedTargetLeadtime"></p-sortIcon>
+                        </div>
+                    </th>
+                </tr>
+            </th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-factoryscopes>
@@ -56,7 +155,18 @@
             <td style="width:100px">{{factoryscopes.ModuleVariant}}</td>
             <td style="width:450px">{{factoryscopes.ModuleVariantDescription}}</td>
             <td style="width:100px">{{factoryscopes.PartNumber}}</td>
-            <td style="text-align: right; width:60px">{{factoryscopes.LeadTime}}</td>
+            <td style="text-align: right; width:100px">{{factoryscopes.LeadTime}}</td>
+            <!-- <td style="text-align: right; width:150px">{{factoryscopes.AgreedTargetLeadtime}}</td> -->
+            <td style="text-align: right; width:150px" pEditableColumn>
+                <p-cellEditor >
+                    <ng-template pTemplate="input">
+                        <input style="text-align: right; width:80px" pInputText type="text" [(ngModel)]="factoryscopes.AgreedTargetLeadtime">
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{factoryscopes.AgreedTargetLeadtime}}
+                    </ng-template>
+                </p-cellEditor>
+            </td>
         </tr>
     </ng-template>
 </p-table>

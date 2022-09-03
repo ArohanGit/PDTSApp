@@ -17,7 +17,7 @@ import { FactoryScope } from '../../domain/factory-scope';
 export class LeadtimeScopesListComponent implements OnInit {
     @Output() onChange = new EventEmitter<any>();
     @Output() onExportExcel = new EventEmitter();
-   
+    @Output() onSave = new EventEmitter<any>();
 
    
     _list: FactoryScope[] = [];
@@ -66,6 +66,10 @@ export class LeadtimeScopesListComponent implements OnInit {
 
     exportExcel() {
         this.onExportExcel.emit();
+    }
+
+    onSaveClick(){
+        this.onSave.emit()
     }
       
     joinMasters() {

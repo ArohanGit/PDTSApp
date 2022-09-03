@@ -21,6 +21,7 @@ export class MarketLeadtimeListComponent implements OnInit {
    
       
     _list: MarketLeadtimeExt[] = [];
+    
     get list(): MarketLeadtimeExt[] {
         return this._list;
     }
@@ -30,11 +31,13 @@ export class MarketLeadtimeListComponent implements OnInit {
     }
 
     _moduleslist: MarketLeadtimeExt[] = [];
+    moduleslistoptions: MarketLeadtimeExt[] = [];
     get moduleslist(): MarketLeadtimeExt[] {
         return this._moduleslist;
     }
     @Input() set moduleslist(value: MarketLeadtimeExt[]) {
         this._moduleslist = [...value];
+        this.moduleslistoptions=[...value];
         this.joinMasters();
     }
 
